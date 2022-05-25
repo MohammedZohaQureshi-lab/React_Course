@@ -5,15 +5,9 @@ const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
-  //   const [enteredInputs, setEnteredInputs] = useState({
-  //     enteredTitle: "",
-  //     enteredAmount: "",
-  //     enteredDate: "",
-  //   });
 
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
-    // console.log(enteredInputs);
   };
   const amountChangeHandler = (event) => {
     setEnteredAmount(event.target.value);
@@ -21,6 +15,12 @@ const ExpenseForm = (props) => {
   const dateChangeHandler = (event) => {
     setEnteredDate(event.target.value);
   };
+
+  const resetForm = () => {
+    setEnteredTitle("");
+    setEnteredAmount("");
+    setEnteredDate("");
+  }
 
   const submitFormHandler = (event) => {
     event.preventDefault();
@@ -30,11 +30,10 @@ const ExpenseForm = (props) => {
       date: new Date(enteredDate),
     };
     props.onSaveExpenseData(expenseData);
-
-    setEnteredTitle("");
-    setEnteredAmount("");
-    setEnteredDate("");
+    resetForm()
   };
+
+
   //two way binding
   return (
     <form onSubmit={submitFormHandler}>
@@ -70,6 +69,10 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button type="button" onClick={props.onCancel}>
+          {/* //Not best way to add a click on submit */}
+          Cancel
+        </button>
         <button type="submit">
           {/* //Not best way to add a click on submit */}
           Add Expense
