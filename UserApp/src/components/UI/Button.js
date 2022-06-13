@@ -1,4 +1,4 @@
-import React from "react-dom";
+import React from "react";
 import styles from "./Button.module.css";
 
 const Button = (props) => {
@@ -6,7 +6,7 @@ const Button = (props) => {
     <button
       className={styles.button}
       type={props.type || "button"}
-      onClick={props.onCLick}
+      onClick={props.click}
     >
       {props.children}
     </button>
