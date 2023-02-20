@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import userStyles from "./AddUser.module.css";
 import Card from "../UI/Card";
 import Button from "../UI/Button";

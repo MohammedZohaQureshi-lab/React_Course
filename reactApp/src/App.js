@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Expenses from "./Components/Expenses/Expenses.js";
 import NewExpense from "./Components/NewExpense/NewExpense";
 const Dummy_Expenses = [
