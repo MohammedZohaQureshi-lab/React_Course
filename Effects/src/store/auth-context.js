@@ -19,9 +19,7 @@ export const AuthContextProvider = (props) => {
         localStorage.removeItem('isLoggedIn');
     };
 
-    return (
-        <AuthContext.Provider value={{ isLoggedIn: isLoggedIn, onLogout: logoutHandler, onLogin: loginHandler }}>{props.children}</AuthContext.Provider>
-    )
+    return <AuthContext.Provider value={{ isLoggedIn: isLoggedIn, onLogout: logoutHandler, onLogin: loginHandler }}>{props.children}</AuthContext.Provider>
 }
 
 export default AuthContext
