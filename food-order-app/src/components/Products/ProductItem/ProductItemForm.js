@@ -1,11 +1,11 @@
 import InputElement from '../../UI/InputElement'
 import classes from './ProductItemForm.module.css'
 
-const ProductItemForm = () => {
+const ProductItemForm = (props) => {
     return (
         <form className={classes.form} >
             <InputElement label='Amount' input={{
-                id: 'amount',
+                id: 'amount_' + props.id,
                 type: 'number',
                 min: '1',
                 max: '5',
