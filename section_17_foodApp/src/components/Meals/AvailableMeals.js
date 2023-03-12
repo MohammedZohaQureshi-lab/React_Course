@@ -1,53 +1,59 @@
+import { useEffect, useState } from 'react';
+
 import Card from '../UI/Card';
 import MealItem from './MealItem/MealItem';
 import classes from './AvailableMeals.module.css';
-import { useEffect, useState } from 'react';
 
 const AvailableMeals = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [httpError, setHttpError] = useState(null);
   const [meals, setMeals] = useState([]);
-  useEffect(() => {
-    const getApiData = async () => {
-      const response = await fetch('https://react-http-2b82b-default-rtdb.firebaseio.com/meals.json');
-      if (!response.ok) {
-        throw new Error;
-      }
-      const dataResponse = await response.json();
-      let loadedMeals = []
+  const [isLoading, setIsLoading] = useState(true);
+  const [httpError, setHttpError] = useState();
 
-      for (const key in dataResponse) {
+  useEffect(() => {
+    const fetchMeals = async () => {
+      const response = await fetch('https://react-http-2b82b-default-rtdb.firebaseio.com/meals.json');
+
+      if (!response.ok) {
+        throw new Error('Something went wrong!');
+      }
+
+      const responseData = await response.json();
+
+      const loadedMeals = [];
+
+      for (const key in responseData) {
         loadedMeals.push({
           id: key,
-          name: dataResponse[key].name,
-          description: dataResponse[key].description,
-          price: dataResponse[key].price
-        })
+          name: responseData[key].name,
+          description: responseData[key].description,
+          price: responseData[key].price,
+        });
       }
+
       setMeals(loadedMeals);
       setIsLoading(false);
-    }
+    };
 
-    getApiData().catch(error => {
+    fetchMeals().catch((error) => {
       setIsLoading(false);
-      setHttpError('Error in loading the data');
-
+      setHttpError(error.message);
     });
+  }, []);
 
-  }, [])
   if (isLoading) {
     return (
-      <section className={classes.mealsLoading}>
-        <p>Data Loading Please Wait....</p>
+      <section className={classes.MealsLoading}>
+        <p>Loading...</p>
       </section>
-    )
+    );
   }
-  if (!isLoading && httpError) {
+
+  if (httpError) {
     return (
-      <section className={classes.mealsError}>
+      <section className={classes.MealsError}>
         <p>{httpError}</p>
       </section>
-    )
+    );
   }
 
   const mealsList = meals.map((meal) => (
@@ -62,7 +68,6 @@ const AvailableMeals = () => {
 
   return (
     <section className={classes.meals}>
-
       <Card>
         <ul>{mealsList}</ul>
       </Card>
