@@ -42,7 +42,7 @@ const SimpleInput = (props) => {
       </div>
       {emailHasError && <p className='error-text'>Enter Email ID </p>}
       <div className="form-actions">
-        <button disabled={!formIsValid} type='submit'>Submit</button>
+        <button disabled={!formIsValid}>Submit</button>
       </div>
     </form>
   );
