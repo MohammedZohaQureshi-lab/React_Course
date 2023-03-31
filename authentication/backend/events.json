@@ -1,12 +1,1 @@
-{
-  "events": [
-    {
-      "title": "A new event",
-      "image": "https://cdn.muenchen-p.de/fl_progressive,q_65/.imaging/stk/responsive/teaser300/dms/va-2016/muenchner-christkindlmarkt/christkindlmarkt-marienplat-logo-hp/document/christkindlmarkt-marienplat-logo-hp.jpg",
-      "date": "2022-10-01",
-      "description": "Some awesome event!",
-      "id": "2a42fcc4-ea21-4bdd-abf6-c40006dc66a9"
-    }
-  ],
-  "users": []
-}
+{"events":[{"title":"Test","image":"https://www.visionvivaah.com/blog/wp-content/uploads/2019/05/Best-Event-Planners-In-Mumbai.jpg","date":"2023-03-30","description":"Description","id":"c357d273-63c7-4f61-badb-a96660a65fcc"},{"title":"A new event","image":"https://cdn.muenchen-p.de/fl_progressive,q_65/.imaging/stk/responsive/teaser300/dms/va-2016/muenchner-christkindlmarkt/christkindlmarkt-marienplat-logo-hp/document/christkindlmarkt-marienplat-logo-hp.jpg","date":"2022-10-01","description":"Some awesome event!","id":"2a42fcc4-ea21-4bdd-abf6-c40006dc66a9"}],"users":[{"email":"test@test.com","password":"$2a$12$dGqJj/10nJvUyplvUAhhpelVXiJsgbqLjZ7IyvkQu8aGqirRN/MAy","id":"a2301511-8a65-422d-a927-0727ea196409"},{"email":"test2@test.com","password":"$2a$12$JQr1zfdX/.Mmi/peNpf9ZeTeDgTk2lnb0rACejSsJpFi88GJTkhqK","id":"14c78d4d-6ba4-4060-b61f-46eccd10e42a"}]}
