@@ -1,10 +1,14 @@
 import MeetupList from "@/components/meetups/MeetupList"
 import { meetupDataBase } from "@/components/meetups/MeetupDataBase"
+import Head from "next/head"
 
 const HomePage = (props) => {
     return (
         <>
-            <h1>This is HomePage</h1>
+            <Head>
+                <title>React Meetup</title>
+                <meta name="description" content="This is a meetup home page"/>
+            </Head>
             <MeetupList meetups={props.meetups} />
         </>
     )

@@ -3,16 +3,23 @@ import { ObjectId } from 'mongodb';
 import MeetupDetails from '@/components/meetups/MeetupDetails'
 import { useRouter } from 'next/router'
 import React from 'react'
+import Head from "next/head"
 
 const MeetupDetailPage = (props) => {
   const router = useRouter();
   return (
-    <MeetupDetails
-      image={props.meetupsData.image}
-      title={props.meetupsData.title}
-      address={props.meetupsData.address}
-      description={props.meetupsData.description}
-    />
+    <>
+      <Head>
+        <title>{props.meetupsData.title}</title>
+        <meta name="description" content="This is a page to show meetup details" />
+      </Head>
+      <MeetupDetails
+        image={props.meetupsData.image}
+        title={props.meetupsData.title}
+        address={props.meetupsData.address}
+        description={props.meetupsData.description}
+      />
+    </>
   )
 }
 export const getStaticPaths = async (params) => {
