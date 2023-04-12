@@ -1,0 +1,11 @@
+.home {
+    display: flex;
+
+    .homeContainer {
+        flex-basis: 80%;
+    }
+
+    .charts {
+        padding: 5px 20px;
+    }
+}
