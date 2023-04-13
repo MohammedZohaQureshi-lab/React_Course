@@ -17,6 +17,10 @@ const UserInfo = (props) => {
                                 <div className="details">
                                     <h4 className="itemTitle">{data.username}</h4>
                                     <div className="detailItem">
+                                        <span className="itemKey">Employee ID:</span>
+                                        <span className="itemValue">{data.id}</span>
+                                    </div>
+                                    <div className="detailItem">
                                         <span className="itemKey">Email:</span>
                                         <span className="itemValue">{data.email}</span>
                                     </div>

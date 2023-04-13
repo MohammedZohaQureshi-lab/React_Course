@@ -6,7 +6,6 @@ import Composed from '../../components/chart/Composed';
 import Users from '../../components/users/Users';
 import { circleData, trendData, initialCircleData, initialTrendData } from '../../region';
 import DrawLineChart from '../../components/chart/LineChart';
-import { Link } from 'react-router-dom';
 import { Grid } from '@mui/material';
 
 
@@ -14,10 +13,10 @@ import { Grid } from '@mui/material';
 const Home = () => {
     const { tickets: initialCircleTickets, users: initialCircleUsers } = initialCircleData;
     const [chartData, setChartData] = useState(initialCircleTickets);
-    const [trendChart, setTrendChart] = useState(initialTrendData)
-    const [usersData, setUserData] = useState(initialCircleUsers)
+    const [trendChart, setTrendChart] = useState(initialTrendData);
+    const [usersData, setUserData] = useState(initialCircleUsers);
     let chartTitle = "Overall Ticket Count Month";
-    let trendTitle = "Last Six Months Trend"
+    let trendTitle = "Last Six Months Trend";
 
 
     const getData = (paramsArray, identifier) => {
@@ -37,7 +36,7 @@ const Home = () => {
         trendTitle = `Last Six Months Trend in ${regionName} Region`
         setChartData(ticketsData);
         setTrendChart(trendingData);
-        setUserData(userData)
+        setUserData(userData);
     }
 
     return (

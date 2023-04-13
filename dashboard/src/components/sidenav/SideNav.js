@@ -9,7 +9,7 @@ const SideNav = (props) => {
     return (
         <div className="sidebar">
             <div className="top">
-                <span className="logo"><DashboardIcon className="icon" />LMI Dashboard</span>
+                <span className="logo"><DashboardIcon className="icon" />LIM Dashboard</span>
             </div>
             <hr />
             <div className="center">
