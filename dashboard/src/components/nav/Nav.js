@@ -4,7 +4,7 @@ const Nav = () => {
     return (
         <div className='nav'>
             <div className='top'>
-            Top Nav
+                Dashboard View
             </div>
             <hr />
         </div>

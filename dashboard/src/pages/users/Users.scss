@@ -1,0 +1,21 @@
+button {
+    &.primary {
+        padding: 5px 8px;
+        border-radius: 5px;
+        color: darkblue;
+        border: 1px dotted rgba(0, 0, 139, 0.596);
+        cursor: pointer;
+        width: 100%;
+        font-size: 0.75rem;
+        max-width: 100px;
+        margin: 0 0 0 1.25rem;
+
+        &.back {
+            display: block;
+        }
+    }
+}
+
+.userGroup{
+    width: 100%;
+}

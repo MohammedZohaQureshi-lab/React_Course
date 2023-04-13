@@ -11,7 +11,7 @@ function App() {
     },
     {
       path: "users",
-      element: <Users />
+      element: <Users isPage={true}/>
     }
   ])
   return (

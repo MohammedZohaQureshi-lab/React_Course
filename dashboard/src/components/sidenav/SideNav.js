@@ -1,36 +1,27 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './SideNav.scss'
+import { regionList } from '../../region'
 
-const SideNav = () => {
-    const itemList = [
-        {
-            state: "Maharashtra",
-            circles: [{ id: "mah1", title: "Mumbai" }, { id: "mah2", title: "Pune" }, { id: "mah3", title: "Satara" }]
-        },
-        {
-            state: "Gujrat",
-            circles: [{ id: "guj1", title: "Surat" }, { id: "guj2", title: "Ahemadabad" }, { id: "guj3", title: "Navsari" }]
-        },
-        {
-            state: "Kashmir",
-            circles: [{ id: "kas1", title: "Srinagar" }, { id: "kas2", title: "Gulmarg" }, { id: "kas3", title: "Sonmarg" }]
-        }
-    ];
+const SideNav = (props) => {
+    const itemList = [...regionList];
     return (
         <div className="sidebar">
             <div className="top">
-                <span className="logo">Telecom Dashboard</span>
+                <Link to='/'><span className="logo">Telecom</span></Link>
             </div>
             <hr />
             <div className="center">
                 <ul>
-                    {itemList.map(({ state, circles }) => (
-                        <> <h3 className="title">{state}</h3>
-                            {circles.map(({ id, title }) => <li key={id} id={id}><span>{title}</span></li>)}
-                        </>
+                    {itemList.map(({ id, state, circles }) => (
+                        <div key={id}> <h3 className="title">{state}</h3>
+                            {circles.map(({ id, title }) => <li key={id} id={id} onClick={() => props.updateChart(id)}><span>{title}</span></li>)}
+                        </div>
                     ))}
-                    <h3 className="title">Users</h3>
+
+                    <hr />
+
+                    <h3 className="title users">Users</h3>
                     <Link to="/users" style={{ textDecoration: "none" }}>
                         <li>
                             <span>Users</span>

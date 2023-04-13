@@ -23,7 +23,7 @@
     }
 
     .center {
-        padding-left: 10px;
+        padding: 0 10px;
 
         ul {
             list-style: none;
@@ -31,11 +31,15 @@
             padding: 0;
 
             .title {
-                font-size: 10px;
+                font-size: 1rem;
                 font-weight: bold;
                 color: #999;
                 margin-top: 15px;
                 margin-bottom: 5px;
+
+                &.users {
+                    color: rgb(1, 1, 86);
+                }
             }
 
             li {
@@ -54,7 +58,7 @@
                 }
 
                 span {
-                    font-size: 13px;
+                    font-size: 0.8rem;
                     font-weight: 600;
                     color: #888;
                     margin-left: 10px;

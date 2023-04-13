@@ -3,9 +3,28 @@
 
     .homeContainer {
         flex-basis: 80%;
+
+        .content {
+            padding: 1rem;
+        }
     }
 
     .charts {
         padding: 5px 20px;
+    }
+
+    .flexContainer {
+        display: flex;
+        justify-content: flex-start;
+        padding: 10px;
+
+        .userGroup {
+            flex: 1;
+        }
+
+        .chartsContainer {
+            flex: 1;
+            height: fit-content;
+        }
     }
 }
