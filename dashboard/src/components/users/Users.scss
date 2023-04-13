@@ -1,0 +1,67 @@
+.userContainer {
+    border-radius: 5px;
+    border: none;
+    background: white;
+    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+    padding: 10px 15px 15px;
+
+    .userTitle {
+        font-size: 1rem;
+        color: #616161;
+    }
+
+    .userDetails,
+    .chartsContainer {
+        box-shadow: none;
+    }
+}
+
+.datatable {
+
+    .datatableTitle {
+        width: 100%;
+        font-size: 24px;
+        color: gray;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .link {
+            text-decoration: none;
+            color: green;
+            font-size: 16px;
+            font-weight: 400;
+            border: 1px solid green;
+            padding: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    }
+
+    .cellWithImg {
+        display: flex;
+        align-items: center;
+
+        .cellImg {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+    }
+
+    .viewButton {
+        cursor: pointer;
+        border-radius: 5px;
+        border: none;
+        background: white;
+        color: darkblue;
+        box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+        width: auto;
+        padding: 8px 30px;
+        font-size: 1rem;
+
+    }
+}

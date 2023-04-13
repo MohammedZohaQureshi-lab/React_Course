@@ -1,25 +1,30 @@
 .sidebar {
-    flex: 1 0 20%;
-    border-right: 0.5px solid rgb(230, 227, 227);
     min-height: 100vh;
     background-color: white;
 
     .top {
         height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
 
         .logo {
-            font-size: 20px;
+            display: block;
+            text-align: center;
+            line-height: 2.2;
+            font-size: 1.3rem;
             font-weight: bold;
-            color: #6439ff;
+            color: #1c0081;
+
+            .icon {
+                position: relative;
+                top: 4px;
+            }
         }
     }
 
     hr {
         height: 0;
-        border: 0.5px solid rgb(230, 227, 227);
+        margin: 0;
+        border: none;
+        border-bottom: 0.5px solid rgb(231, 228, 228);
     }
 
     .center {
@@ -30,12 +35,16 @@
             margin: 0;
             padding: 0;
 
+            .listItem {
+                margin-bottom: 1rem;
+            }
+
             .title {
                 font-size: 1rem;
                 font-weight: bold;
-                color: #999;
-                margin-top: 15px;
-                margin-bottom: 5px;
+                color: #616161;
+                margin-top: 1rem;
+                margin-bottom: 0.5rem;
 
                 &.users {
                     color: rgb(1, 1, 86);
@@ -58,7 +67,7 @@
                 }
 
                 span {
-                    font-size: 0.8rem;
+                    font-size: 0.95rem;
                     font-weight: 600;
                     color: #888;
                     margin-left: 10px;

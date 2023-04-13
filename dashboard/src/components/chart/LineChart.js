@@ -4,19 +4,19 @@ import './Chart.scss'
 
 const DrawLineChart = ({ chartData, title }) => {
     const sampleData = [
-        { name: "January", total: 1200 },
-        { name: "February", total: 2100 },
-        { name: "March", total: 800 },
-        { name: "April", total: 1600 },
-        { name: "May", total: 900 },
-        { name: "June", total: 1700 },
+        { name: "JAN", total: 1200 },
+        { name: "FEB", total: 2100 },
+        { name: "MAR", total: 800 },
+        { name: "APR", total: 1600 },
+        { name: "MAY", total: 900 },
+        { name: "JUN", total: 1700 },
     ];
     const data = chartData || sampleData;
     return (
         <div className='chartsContainer'>
             <div className="title">{title}</div>
             <ResponsiveContainer width="100%" height={300}>
-                <LineChart width={500} height={300} data={data}>
+                <LineChart data={data}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="week" padding={{ left: 30, right: 30 }} />
                     <YAxis />

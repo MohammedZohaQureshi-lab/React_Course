@@ -1,6 +1,5 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Home from './pages/home/Home'
-import Users from './pages/users/Users'
 import './App.css';
 
 function App() {
@@ -8,10 +7,6 @@ function App() {
     {
       path: "/",
       element: <Home />
-    },
-    {
-      path: "users",
-      element: <Users isPage={true}/>
     }
   ])
   return (

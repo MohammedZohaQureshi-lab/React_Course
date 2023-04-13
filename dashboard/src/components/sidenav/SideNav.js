@@ -1,6 +1,7 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import './SideNav.scss'
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import AssessmentIcon from '@mui/icons-material/Assessment';
 import { regionList } from '../../region'
 
 const SideNav = (props) => {
@@ -8,26 +9,16 @@ const SideNav = (props) => {
     return (
         <div className="sidebar">
             <div className="top">
-                <Link to='/'><span className="logo">Telecom</span></Link>
+                <span className="logo"><DashboardIcon className="icon" />LMI Dashboard</span>
             </div>
             <hr />
             <div className="center">
                 <ul>
                     {itemList.map(({ id, state, circles }) => (
-                        <div key={id}> <h3 className="title">{state}</h3>
-                            {circles.map(({ id, title }) => <li key={id} id={id} onClick={() => props.updateChart(id)}><span>{title}</span></li>)}
+                        <div className='listItem' role='listitem' key={id}> <h3 className="title">{state}</h3>
+                            {circles.map(({ id, title }) => <li key={id} id={id} onClick={() => props.updateChart(id)}><AssessmentIcon className="icon" /><span>{title}</span></li>)}
                         </div>
                     ))}
-
-                    <hr />
-
-                    <h3 className="title users">Users</h3>
-                    <Link to="/users" style={{ textDecoration: "none" }}>
-                        <li>
-                            <span>Users</span>
-                        </li>
-                    </Link>
-
                 </ul>
             </div>
 

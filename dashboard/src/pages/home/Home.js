@@ -3,15 +3,19 @@ import './Home.scss'
 import SideNav from '../../components/sidenav/SideNav';
 import Nav from '../../components/nav/Nav';
 import Composed from '../../components/chart/Composed';
-import Users from '../users/Users';
+import Users from '../../components/users/Users';
 import { circleData, trendData, initialCircleData, initialTrendData } from '../../region';
 import DrawLineChart from '../../components/chart/LineChart';
+import { Link } from 'react-router-dom';
+import { Grid } from '@mui/material';
 
 
 
 const Home = () => {
-    const [chartData, setChartData] = useState(initialCircleData);
+    const { tickets: initialCircleTickets, users: initialCircleUsers } = initialCircleData;
+    const [chartData, setChartData] = useState(initialCircleTickets);
     const [trendChart, setTrendChart] = useState(initialTrendData)
+    const [usersData, setUserData] = useState(initialCircleUsers)
     let chartTitle = "Overall Ticket Count Month";
     let trendTitle = "Last Six Months Trend"
 
@@ -19,34 +23,57 @@ const Home = () => {
     const getData = (paramsArray, identifier) => {
         const params = [...paramsArray];
         const paramsIndex = params.findIndex(({ id }) => id === identifier);
-        const { tickets, circle } = params[paramsIndex];
+        const { tickets, circle, users } = params[paramsIndex];
         return {
             name: circle,
-            dataArray: tickets
+            dataArray: tickets,
+            users
         }
     }
     const chartHandler = (id) => {
-        const { dataArray: ticketsData, name: circleName } = getData(circleData, id);
+        const { dataArray: ticketsData, name: circleName, users: userData } = getData(circleData, id);
         const { dataArray: trendingData, name: regionName } = getData(trendData, id);
         chartTitle = `Overall Ticket Count Current Month in ${circleName} Region`;
         trendTitle = `Last Six Months Trend in ${regionName} Region`
         setChartData(ticketsData);
         setTrendChart(trendingData);
+        setUserData(userData)
     }
+
     return (
         <div className='home'>
-            <SideNav updateChart={chartHandler} />
             <div className='homeContainer'>
-                <Nav />
-                <div className='content'>
-                    <DrawLineChart chartData={chartData} title={chartTitle} />
-                    <div className='flexContainer'>
-                        <Users isPage={false} />
-                        <Composed chartData={trendChart} title={trendTitle} />
-                    </div>
+                <Grid container>
+                    <Grid className='borderRight' item xs={6} md={2}>
+                        <SideNav updateChart={chartHandler} />
+                    </Grid>
+                    <Grid item xs={6} md={10}>
+                        <Nav />
+                        {/* Charts */}
+                        <div className='pageContent'>
 
-                </div>
+                            <div className='topContainer'>
+                                <Grid container spacing={2}>
+                                    <Grid item xs={6} md={6}>
+                                        <DrawLineChart chartData={chartData} title={chartTitle} />
+                                    </Grid>
+                                    <Grid item xs={6} md={6}>
+                                        <Composed chartData={trendChart} title={trendTitle} />
+                                    </Grid>
+                                </Grid>
+                            </div>
+                            <div className='bottomContainer'>
+                                <Grid container>
+                                    <Grid item xs={12} md={12}>
+                                        <Users userData={usersData} />
+                                    </Grid>
+                                </Grid>
+                            </div>
+                        </div>
+                        {/* User */}
 
+                    </Grid>
+                </Grid>
             </div>
         </div>
     )
