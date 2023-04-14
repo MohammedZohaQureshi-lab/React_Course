@@ -17,6 +17,7 @@ const Home = () => {
     const [trendChart, setTrendChart] = useState(initialTrendData);
     const [usersData, setUserData] = useState(initialCircleUsers);
     const [showDetails, setShowDetails] = useState({ id: 0, visibility: false });
+    const [viewChartDetails, setViewChartDetails] = useState(false);
     let chartTitle = "Overall Ticket Count Month";
     let trendTitle = "Last Six Months Trend";
 
@@ -32,10 +33,14 @@ const Home = () => {
         setChartData(ticketsData);
         setTrendChart(trendingData);
         setUserData(userData);
-        setShowDetails(prevState => ({ id: "", visibility: !prevState.visibility }));
+        setShowDetails(prevState => ({ id: "", visibility: false }));
+        setViewChartDetails(false)
     }
     const showList = () => {
         setShowDetails(prevState => ({ id: "", visibility: !prevState.visibility }))
+    }
+    const showChartDetails = () => {
+        setViewChartDetails(true);
     }
 
     const getData = (paramsArray, identifier) => {
@@ -68,7 +73,7 @@ const Home = () => {
                                         <DrawLineChart chartData={chartData} title={chartTitle} />
                                     </Grid>
                                     <Grid item xs={6} md={6}>
-                                        <Composed chartData={trendChart} title={trendTitle} />
+                                        <Composed chartData={trendChart} title={trendTitle} onDetailsClick={showChartDetails} viewChartDetails={viewChartDetails} />
                                     </Grid>
                                 </Grid>
                             </div>

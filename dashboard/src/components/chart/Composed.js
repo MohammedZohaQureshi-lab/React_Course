@@ -1,7 +1,6 @@
 import { ComposedChart, Line, Area, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Scatter, ResponsiveContainer } from "recharts";
 import './Chart.scss'
-import { useState } from "react";
-import SingleBarChart from "./SingleLineChart";
+import DrawBarChart from "./BarChart";
 
 const initialData = [
     { name: "Sample A", open: 590, closed: 800, total: 1400, pending: 490 },
@@ -11,24 +10,21 @@ const initialData = [
     { name: "Sample E", open: 1520, closed: 1108, total: 1100, pending: 460 },
     { name: "Sample F", open: 1400, closed: 680, total: 1700, pending: 380 }
 ];
-const detailData = [{ week: "Week 1", total: 1200, open: 100, closed: 100, pending: 800 },
-{ week: "Week 2", total: 2010, open: 10, closed: 1400, pending: 600 },
-{ week: "Week 3", total: 800, open: 400, closed: 300, pending: 100 },
-{ week: "Week 4", total: 1600, open: 1000, closed: 150, pending: 250 },
-{ week: "Week 5", total: 900, open: 50, closed: 150, pending: 600 }]
+const detailData = [
+    { week: "Week 1", total: 1200, open: 100, closed: 100, pending: 800 },
+    { week: "Week 2", total: 2010, open: 10, closed: 1400, pending: 600 },
+    { week: "Week 3", total: 800, open: 400, closed: 300, pending: 100 },
+    { week: "Week 4", total: 1600, open: 1000, closed: 150, pending: 250 },
+    { week: "Week 5", total: 900, open: 50, closed: 150, pending: 600 }
+]
 
-const Composed = ({ chartData, title }) => {
+const Composed = ({ chartData, title, onDetailsClick, viewChartDetails }) => {
     const data = chartData || initialData;
-    const [toggle, setToggle] = useState(false);
-    const [newData, setNewData] = useState([])
-    const showBarDetails = (event) => {
-        setToggle(true);
-        debugger;
-        setNewData(event.routeData)
-    }
+    const newData = detailData;
+
     return (
         <>
-            {!toggle && <div className='chartsContainer'>
+            {!viewChartDetails && <div className='chartsContainer'>
                 <div className="title">{title}</div>
                 <ResponsiveContainer width="100%" height={300}>
                     <ComposedChart data={data} margin={{ top: 20, right: 20, bottom: 20, left: 20 }} >
@@ -38,13 +34,13 @@ const Composed = ({ chartData, title }) => {
                         <Tooltip />
                         <Legend />
                         <Area type="monotone" dataKey="total" fill="#8884d8" stroke="#8884d8" />
-                        <Bar dataKey="open" barSize={20} fill="#413ea0" onClick={showBarDetails}   />
+                        <Bar dataKey="open" barSize={20} fill="#413ea0" onClick={onDetailsClick} />
                         <Line type="monotone" dataKey="closed" stroke="#ff7300" />
                         <Scatter dataKey="pending" fill="red" />
                     </ComposedChart>
                 </ResponsiveContainer>
             </div>}
-            {toggle && <SingleBarChart chartData={newData} title='Month Detail Chart' />}
+            {viewChartDetails && <DrawBarChart chartData={newData} title='Month Detail Chart' />}
         </>
 
     );

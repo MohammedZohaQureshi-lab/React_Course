@@ -2,7 +2,7 @@ import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Toolti
 import './Chart.scss'
 
 
-const SingleBarChart = ({ chartData, title }) => {
+const DrawBarChart = ({ chartData, title }) => {
     const sampleData = [
         { week: "Week 1", total: 800, open: 400, closed: 300, pending: 100 },   
         { week: "Week 2", total: 900, open: 50, closed: 150, pending: 600 },
@@ -31,4 +31,4 @@ const SingleBarChart = ({ chartData, title }) => {
     )
 }
 
-export default SingleBarChart
+export default DrawBarChart
