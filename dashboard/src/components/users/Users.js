@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import './Users.scss'
 import DataTable from '../dataTable/DataTable'
-
 import UserInfo from '../info/UserInfo';
 
 
