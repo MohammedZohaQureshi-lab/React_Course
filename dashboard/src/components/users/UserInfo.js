@@ -5,6 +5,7 @@ import './UserInfo.scss'
 
 const UserInfo = (props) => {
     const { data } = props;
+    debugger;
     return (
         <div className="single">
             <div className="singleContainer">

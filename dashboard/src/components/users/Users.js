@@ -7,7 +7,7 @@ import { Grid } from '@mui/material';
 
 const Users = (props) => {
     const rowsList = props.userData.map(({ id, username, img }) => ({ id, username, img }));
-    let userData =[...rowsList];
+    let userData =[...props.userData];
     const showDetails = props.showDetails.visibility;
     if (showDetails) {
         const identifier = props.showDetails.id
