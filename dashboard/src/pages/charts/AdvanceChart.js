@@ -1,40 +1,17 @@
-import React, { MouseEvent, useRef } from 'react';
-import { InteractionItem } from 'chart.js';
-import {
-    Chart as ChartJS,
-    LinearScale,
-    CategoryScale,
-    BarElement,
-    PointElement,
-    LineElement,
-    Legend,
-    Tooltip,
-} from 'chart.js';
-import {
-    Chart,
-    getDatasetAtEvent,
-    getElementAtEvent,
-    getElementsAtEvent,
-} from 'react-chartjs-2';
+import React, { useRef } from 'react';
+import { Chart as ChartJS, LinearScale, CategoryScale, BarElement, PointElement, LineElement, Legend, Tooltip, } from 'chart.js';
+import { Chart, getDatasetAtEvent, getElementAtEvent, getElementsAtEvent, } from 'react-chartjs-2';
 import { faker } from '@faker-js/faker';
 
-ChartJS.register(
-    LinearScale,
-    CategoryScale,
-    BarElement,
-    PointElement,
-    LineElement,
-    Legend,
-    Tooltip
-);
+ChartJS.register(LinearScale, CategoryScale, BarElement, PointElement, LineElement, Legend, Tooltip);
 
-export const options = {
-    scales: {
-        y: {
-            beginAtZero: true,
-        },
-    },
-};
+// export const options = {
+//     scales: {
+//         y: {
+//             beginAtZero: true,
+//         },
+//     },
+// };
 
 const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
@@ -80,17 +57,13 @@ const AdvanceChart = () => {
         if (!element.length) return;
 
         const { datasetIndex, index } = element[0];
-
-        console.log(data.labels[index], data.datasets[datasetIndex].data[index]);
     };
 
     const printElementsAtEvent = (elements) => {
         if (!elements.length) return;
-
-        console.log(elements.length);
     };
 
-    const chartRef = useRef < ChartJS > (null);
+    const chartRef = useRef(ChartJS);
 
     const onClick = (event) => {
         const { current: chart } = chartRef;
@@ -105,15 +78,10 @@ const AdvanceChart = () => {
     };
 
     return (
-        <Chart
-            ref={chartRef}
-            type='bar'
-            onClick={onClick}
-            options={options}
-            data={data}
-        />
+        <div style={{ width: 1000 }}>
+            <Chart ref={chartRef} type='bar' onClick={onClick} data={data} />
+        </div>
     );
 }
 
 export default AdvanceChart
-

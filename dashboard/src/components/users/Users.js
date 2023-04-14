@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Users.scss'
 import DataTable from '../dataTable/DataTable'
 import UserInfo from './UserInfo';
@@ -7,12 +7,12 @@ import { Grid } from '@mui/material';
 
 const Users = (props) => {
     const rowsList = props.userData.map(({ id, username, img }) => ({ id, username, img }));
-    let userData =[...props.userData];
+    let userData = [...props.userData];
     const showDetails = props.showDetails.visibility;
     if (showDetails) {
         const identifier = props.showDetails.id
         const userIndex = userData.findIndex(user => user.id === identifier);
-        userData=userData[userIndex];
+        userData = userData[userIndex];
     }
     const getId = (identifier) => {
         props.detailHandler(identifier);
@@ -39,7 +39,7 @@ const Users = (props) => {
             },
         }
     ]
-    
+
 
     return (
         <div className='userContainer'>
