@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import './Home.scss'
-import SideNav from '../../components/sidenav/SideNav';
+import SideNav from '../../components/nav/SideNav';
 import Nav from '../../components/nav/Nav';
 import Composed from '../../components/chart/Composed';
 import Users from '../../components/users/Users';
-import { circleData, trendData, initialCircleData, initialTrendData } from '../../region';
 import DrawLineChart from '../../components/chart/LineChart';
+import { circleData, trendData, initialCircleData, initialTrendData } from '../../region';
 import { Grid } from '@mui/material';
 
 
 
 const Home = () => {
+    
     const { tickets: initialCircleTickets, users: initialCircleUsers } = initialCircleData;
     const [chartData, setChartData] = useState(initialCircleTickets);
     const [trendChart, setTrendChart] = useState(initialTrendData);

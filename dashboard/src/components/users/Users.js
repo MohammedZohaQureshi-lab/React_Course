@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import './Users.scss'
 import DataTable from '../dataTable/DataTable'
-import UserInfo from '../info/UserInfo';
+import UserInfo from './UserInfo';
+import { Grid } from '@mui/material';
 
 
 const Users = (props) => {
@@ -42,7 +43,15 @@ const Users = (props) => {
     }
     return (
         <div className='userContainer'>
-            <h2 className='userTitle'>Nodal Users Information</h2>
+            <Grid container>
+                <Grid className='borderRight' item xs={8} md={10}>
+                    <h2 className='userTitle'>Nodal Users Information</h2>
+                </Grid>
+                <Grid className='borderRight' item xs={8} md={10}>
+                    <button className="viewButton">Add New User <span> &nbsb; +</span></button>
+                </Grid>
+            </Grid>
+
             {!showDetails && <DataTable rowData={rowsList} columnData={userColumns} pageSize={5} />}
             {showDetails && <UserInfo goBack={showTable} data={userData} />}
         </div>
