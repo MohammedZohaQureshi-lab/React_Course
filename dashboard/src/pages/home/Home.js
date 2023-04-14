@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Home.scss'
 import SideNav from '../../components/nav/SideNav';
 import Nav from '../../components/nav/Nav';
@@ -11,14 +11,19 @@ import { Grid } from '@mui/material';
 
 
 const Home = () => {
-    
+
     const { tickets: initialCircleTickets, users: initialCircleUsers } = initialCircleData;
     const [chartData, setChartData] = useState(initialCircleTickets);
     const [trendChart, setTrendChart] = useState(initialTrendData);
     const [usersData, setUserData] = useState(initialCircleUsers);
+    const [showDetails, setShowDetails] = useState({ id: 0, visibility: false });
     let chartTitle = "Overall Ticket Count Month";
     let trendTitle = "Last Six Months Trend";
 
+
+    const detailHandler = (identifier) => {
+        setShowDetails(prevState => ({ id: identifier, visibility: !prevState.visibility }));
+    }
     const chartHandler = (id) => {
         const { dataArray: ticketsData, name: circleName, users: userData } = getData(circleData, id);
         const { dataArray: trendingData, name: regionName } = getData(trendData, id);
@@ -27,6 +32,10 @@ const Home = () => {
         setChartData(ticketsData);
         setTrendChart(trendingData);
         setUserData(userData);
+        setShowDetails(prevState => ({ id: "", visibility: !prevState.visibility }));
+    }
+    const showList = () => {
+        setShowDetails(prevState => ({ id: "", visibility: !prevState.visibility }))
     }
 
     const getData = (paramsArray, identifier) => {
@@ -66,7 +75,7 @@ const Home = () => {
                             <div className='bottomContainer'>
                                 <Grid container>
                                     <Grid item xs={12} md={12}>
-                                        <Users userData={usersData} />
+                                        <Users userData={usersData} detailHandler={detailHandler} showDetails={showDetails} showTable={showList} />
                                     </Grid>
                                 </Grid>
                             </div>

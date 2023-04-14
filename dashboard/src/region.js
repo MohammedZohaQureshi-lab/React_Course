@@ -23,7 +23,7 @@ export const initialCircleData = {
         { name: "MAR", total: 800, open: 200, closed: 300, pending: 300 },
         { name: "APR", total: 1275, open: 475, closed: 500, pending: 300 },
         { name: "MAY", total: 240, open: 100, closed: 40, pending: 100 },
-        { name: "JUN", total: 500, open: 150, closed: 100, pending: 150 }
+        { name: "JUN", total: 500, open: 150, closed: 100, pending: 150 },
     ], users: [
         {
             id: "11337611",
@@ -519,12 +519,12 @@ export const circleData = [
 
 
 export const initialTrendData = [
-    { name: "JAN", total: 1000, open: 200, closed: 450, pending: 350 },
-    { name: "FEB", total: 500, open: 300, closed: 50, pending: 150 },
-    { name: "MAR", total: 800, open: 200, closed: 300, pending: 300 },
-    { name: "APR", total: 1275, open: 475, closed: 500, pending: 300 },
-    { name: "MAY", total: 240, open: 100, closed: 40, pending: 100 },
-    { name: "JUN", total: 500, open: 150, closed: 100, pending: 150 }
+    { name: "JAN", total: 500, open: 300, closed: 50, pending: 150 },
+    { name: "FEB", total: 1000, open: 200, closed: 450, pending: 350 },
+    { name: "MAR", total: 1275, open: 475, closed: 500, pending: 300 },
+    { name: "APR", total: 800, open: 200, closed: 300, pending: 300 },
+    { name: "MAY", total: 500, open: 150, closed: 100, pending: 150 },
+    { name: "JUN", total: 240, open: 100, closed: 40, pending: 100 },
 ]
 export const trendData = [
     {

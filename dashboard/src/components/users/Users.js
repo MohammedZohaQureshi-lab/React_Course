@@ -7,8 +7,16 @@ import { Grid } from '@mui/material';
 
 const Users = (props) => {
     const rowsList = props.userData.map(({ id, username, img }) => ({ id, username, img }));
-    const [userData, setUserData] = useState(rowsList);
-    const [showDetails, setShowDetails] = useState(null);
+    let userData =[...rowsList];
+    const showDetails = props.showDetails.visibility;
+    if (showDetails) {
+        const identifier = props.showDetails.id
+        const userIndex = userData.findIndex(user => user.id === identifier);
+        userData=userData[userIndex];
+    }
+    const getId = (identifier) => {
+        props.detailHandler(identifier);
+    }
     const userColumns = [
         {
             field: "id", headerName: "Emp ID", width: 150
@@ -27,33 +35,25 @@ const Users = (props) => {
         {
             field: "view", headerName: "View Details", width: 150,
             renderCell: (params) => {
-                return (<button className="viewButton" onClick={() => showDetailsHandler(params.row.id)}>View</button>)
+                return (<button className="viewButton" onClick={() => getId(params.row.id)}>View</button>)
             },
         }
     ]
-    const showTable = () => {
-        setUserData(rowsList);
-        setShowDetails(false);
-    }
-    const showDetailsHandler = (id) => {
-        const usersData = [...userData];
-        const userIndex = usersData.findIndex(user => user.id === id);
-        setUserData(usersData[userIndex]);
-        setShowDetails(true);
-    }
+    
+
     return (
         <div className='userContainer'>
             <Grid container>
                 <Grid className='borderRight' item xs={8} md={10}>
                     <h2 className='userTitle'>Nodal Users Information</h2>
                 </Grid>
-                <Grid className='borderRight' item xs={8} md={10}>
+                {/* <Grid className='borderRight' item xs={8} md={10}>
                     <button className="viewButton">Add New User <span> &nbsb; +</span></button>
-                </Grid>
+                </Grid> */}
             </Grid>
 
             {!showDetails && <DataTable rowData={rowsList} columnData={userColumns} pageSize={5} />}
-            {showDetails && <UserInfo goBack={showTable} data={userData} />}
+            {showDetails && <UserInfo goBack={props.showTable} data={userData} />}
         </div>
 
     )
