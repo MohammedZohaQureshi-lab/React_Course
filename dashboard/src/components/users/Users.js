@@ -4,11 +4,10 @@ import DataTable from '../dataTable/DataTable'
 import UserInfo from '../info/UserInfo';
 
 
-let showDetails = false;
-
-const Users = ({ userData }) => {
-    const rowsList = userData.map(({ id, username, img }) => ({ id, username, img }));
-    const [userDetails, setUserDetails] = useState(null);
+const Users = (props) => {
+    const rowsList = props.userData.map(({ id, username, img }) => ({ id, username, img }));
+    const [userData, setUserData] = useState(rowsList);
+    const [showDetails, setShowDetails] = useState(null);
     const userColumns = [
         {
             field: "id", headerName: "Emp ID", width: 150
@@ -32,20 +31,20 @@ const Users = ({ userData }) => {
         }
     ]
     const showTable = () => {
-        setUserDetails(false);
-        showDetails = false;
+        setUserData(rowsList);
+        setShowDetails(false);
     }
     const showDetailsHandler = (id) => {
         const usersData = [...userData];
         const userIndex = usersData.findIndex(user => user.id === id);
-        setUserDetails(usersData[userIndex]);
-        showDetails = true;
+        setUserData(usersData[userIndex]);
+        setShowDetails(true);
     }
     return (
         <div className='userContainer'>
             <h2 className='userTitle'>Nodal Users Information</h2>
             {!showDetails && <DataTable rowData={rowsList} columnData={userColumns} pageSize={5} />}
-            {showDetails && <UserInfo goBack={showTable} data={userDetails} />}
+            {showDetails && <UserInfo goBack={showTable} data={userData} />}
         </div>
 
     )

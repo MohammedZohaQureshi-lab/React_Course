@@ -18,6 +18,15 @@ const Home = () => {
     let chartTitle = "Overall Ticket Count Month";
     let trendTitle = "Last Six Months Trend";
 
+    const chartHandler = (id) => {
+        const { dataArray: ticketsData, name: circleName, users: userData } = getData(circleData, id);
+        const { dataArray: trendingData, name: regionName } = getData(trendData, id);
+        chartTitle = `Overall Ticket Count Current Month in ${circleName} Region`;
+        trendTitle = `Last Six Months Trend in ${regionName} Region`
+        setChartData(ticketsData);
+        setTrendChart(trendingData);
+        setUserData(userData);
+    }
 
     const getData = (paramsArray, identifier) => {
         const params = [...paramsArray];
@@ -29,15 +38,7 @@ const Home = () => {
             users
         }
     }
-    const chartHandler = (id) => {
-        const { dataArray: ticketsData, name: circleName, users: userData } = getData(circleData, id);
-        const { dataArray: trendingData, name: regionName } = getData(trendData, id);
-        chartTitle = `Overall Ticket Count Current Month in ${circleName} Region`;
-        trendTitle = `Last Six Months Trend in ${regionName} Region`
-        setChartData(ticketsData);
-        setTrendChart(trendingData);
-        setUserData(userData);
-    }
+
 
     return (
         <div className='home'>
