@@ -1,28 +1,13 @@
-import { Grid } from '@mui/material'
-import React from 'react'
-import SideNav from '../../components/nav/SideNav'
-import Nav from '../../components/nav/Nav'
+import React from 'react';
+// import { Grid } from '@mui/material'
+// import SideNav from '../../components/nav/SideNav'
+// import Nav from '../../components/nav/Nav'
+import ReactTable from '../../components/dataTable/ReactTable'
+import { useSelector } from 'react-redux';
 
 const EditUser = () => {
-    return (
-        <>
-            <Grid container>
-                <Grid className='borderRight' item xs={6} md={2}>
-                    <SideNav />
-                </Grid>
-                <Grid item xs={6} md={10}>
-                    <Nav />
-
-                    <div className='pageContent'>
-
-                        UserDetails
-                    </div>
-
-
-                </Grid>
-            </Grid>
-        </>
-    )
+    const usersData = useSelector(state => state.users.userData);
+    return <ReactTable tableData={usersData} />
 }
 
 export default EditUser

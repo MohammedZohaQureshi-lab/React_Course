@@ -1,5 +1,6 @@
 import { Grid } from '@mui/material';
 import DrawLineChart from '../chart/LineChart';
+import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
 
 import './UserInfo.scss'
 
@@ -45,7 +46,7 @@ const UserInfo = (props) => {
                                     </div>
                                 </div>
                             </div>
-                            <button className='primary back' onClick={props.goBack}><span>Show All Users</span></button>
+                            <button className='primary back withIcon' onClick={props.goBack}><span><ArrowCircleLeftOutlinedIcon /></span><span>Show All Users</span></button>
                         </div>
                     </Grid>
                     <Grid item xs={12} md={8}>

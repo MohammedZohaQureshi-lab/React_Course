@@ -84,16 +84,32 @@ button {
         border: none;
         color: darkblue;
         box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
-        cursor: pointer;
         width: auto;
         margin: 1.5rem auto 0.5rem;
         padding: 10px 30px;
         font-size: 1rem;
         background: white;
+        cursor: pointer;
+        position: relative;
 
-        &.back {
-            display: block;
+        &.withIcon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 5px;
+
+            svg {
+                margin: 0;
+                display: block;
+                margin-bottom: 2px;
+            }
+
+            span {
+                align-self: center;
+            }
         }
+
+
 
         &:hover {
             box-shadow: 0px 4px 3px 0px #bbbbbb;

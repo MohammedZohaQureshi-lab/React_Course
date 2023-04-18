@@ -1,0 +1,49 @@
+[debug] [2023-04-18T08:59:37.248Z] ----------------------------------------------------------------------
+[debug] [2023-04-18T08:59:37.251Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\zoha.a.qureshi\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-04-18T08:59:37.252Z] CLI Version:   11.27.0
+[debug] [2023-04-18T08:59:37.253Z] Platform:      win32
+[debug] [2023-04-18T08:59:37.253Z] Node Version:  v18.15.0
+[debug] [2023-04-18T08:59:37.255Z] Time:          Tue Apr 18 2023 14:29:37 GMT+0530 (India Standard Time)
+[debug] [2023-04-18T08:59:37.255Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-04-18T08:59:37.356Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-04-18T08:59:37.356Z] > authorizing via signed-in user (zzoha9432@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\zoha.a.qureshi\Desktop\JIO\React_Course\dashboard
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-04-18T08:59:43.690Z] Using project from CLI flag: react-dashboard-4965c
+[debug] [2023-04-18T08:59:43.694Z] > refreshing access token with scopes: []
+[debug] [2023-04-18T08:59:43.697Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-04-18T08:59:43.697Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-04-18T08:59:43.983Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-04-18T08:59:43.984Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-04-18T08:59:44.017Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/react-dashboard-4965c [none]
+[debug] [2023-04-18T08:59:44.558Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/react-dashboard-4965c 200
+[debug] [2023-04-18T08:59:44.558Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/react-dashboard-4965c {"projectId":"react-dashboard-4965c","projectNumber":"943223092813","displayName":"react-dashboard","name":"projects/react-dashboard-4965c","resources":{"hostingSite":"react-dashboard-4965c","realtimeDatabaseInstance":"react-dashboard-4965c-default-rtdb"},"state":"ACTIVE","etag":"1_fad4c67e-71f0-4c38-9626-f407bd888e76"}
+[info] i  Using project react-dashboard-4965c (react-dashboard) 
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
