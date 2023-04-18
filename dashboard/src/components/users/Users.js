@@ -31,7 +31,6 @@ const Users = ({ userData }) => {
         },
         {
             Header: 'Action',
-            accessor: '',
             Cell: (props) => <button className="button primary" onClick={() => showUserDetails(props.row.original.id)}>View</button>
         },
     ]

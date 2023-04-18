@@ -30,7 +30,7 @@ const ReactTable = ({ useRows, useColumns }) => {
                 className='table_header-head'
               >
                 {column.render('Header')}
-                <span>
+                <span className='sortIcon'>
                   {column.isSorted
                     ? column.isSortedDesc
                       ? <ArrowDownwardOutlinedIcon />
