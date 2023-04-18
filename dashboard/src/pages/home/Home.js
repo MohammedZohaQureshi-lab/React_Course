@@ -25,7 +25,7 @@ const Home = () => {
         dispatch(chartActions.updateCharts({
             tickets: ticketsData,
             trending: trendingData,
-            trendTitle: `Last Six Months Trend in ${regionName} Region`,
+            trendTitle: `Last Six Months Trends in ${regionName} Region`,
             chartTitle: `Overall Ticket Count Current Month in ${circleName} Region`
         }));
         dispatch(usersActions.updateUsers({ updateInfo: false, userList: userData }));

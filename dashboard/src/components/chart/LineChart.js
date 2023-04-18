@@ -4,12 +4,12 @@ import './Chart.scss'
 
 const DrawLineChart = ({ chartData, title }) => {
     const sampleData = [
-        { name: "JAN", total: 1200 },
-        { name: "FEB", total: 2100 },
-        { name: "MAR", total: 800 },
-        { name: "APR", total: 1600 },
-        { name: "MAY", total: 900 },
-        { name: "JUN", total: 1700 },
+        { name: "Week 1", total: 1200 },
+        { name: "Week 2", total: 2100 },
+        { name: "Week 3", total: 800 },
+        { name: "Week 4", total: 1600 },
+        { name: "Week 5", total: 900 },
+        { name: "Week 6", total: 1700 },
     ];
     const data = chartData || sampleData;
     return (
@@ -18,7 +18,7 @@ const DrawLineChart = ({ chartData, title }) => {
             <ResponsiveContainer width="100%" height={300}>
                 <LineChart data={data}>
                     <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="week" padding={{ left: 30, right: 30 }} />
+                    <XAxis dataKey="name" padding={{ left: 30, right: 30 }} />
                     <YAxis />
                     <Tooltip />
                     <Legend />

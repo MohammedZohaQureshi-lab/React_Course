@@ -4,7 +4,7 @@ import { initialCircle, initialTrend } from '../region';
 const { tickets: initialCircleTickets } = initialCircle;
 const chartReducer = createSlice({
   name: 'charts',
-  initialState: { tickets: initialCircleTickets, trending: initialTrend,chartTitle:'Overall Ticket Count Month',trendTitle:'Overall Ticket Count Month'  },
+  initialState: { tickets: initialCircleTickets, trending: initialTrend,chartTitle:'Overall Ticket Count Month',trendTitle:'Overall Last Six Months Trends'  },
   reducers: {
     updateCharts(state, actions) {
       debugger;
