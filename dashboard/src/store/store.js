@@ -1,13 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
-import usersReducer from './slice-usersReducerr'
-import chartReducer from './slice-chartReducerr'
-import regionReducer from './slice-regionReducerer'
+import usersReducer from './slice-usersReducer'
+import chartReducer from './slice-chartReducer'
 
 const store = configureStore({
     reducer: {
-        users: usersReducer,
-        charts: chartReducer,
-        region: regionReducer
+        users: usersReducer.reducer,
+        charts: chartReducer.reducer
     },
 })
 

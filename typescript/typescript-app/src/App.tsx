@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import ToDos from './components/ToDos';
 import ToDo from './models/todo';
+import Lists from './components/Lists';
 
 function App() {
   const todos = [

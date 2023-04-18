@@ -3,20 +3,13 @@ import './Users.scss'
 import DataTable from '../dataTable/DataTable'
 import UserInfo from './UserInfo';
 import { Grid } from '@mui/material';
+//import { usersActions } from '../../store/slice-usersReducer';
+import { useDispatch, useSelector } from 'react-redux';
+import { usersActions } from '../../store/slice-usersReducer';
 
 
-const Users = (props) => {
-    const rowsList = props.userData.map(({ id, username, img }) => ({ id, username, img }));
-    let userData = [...props.userData];
-    const showDetails = props.showDetails.visibility;
-    if (showDetails) {
-        const identifier = props.showDetails.id
-        const userIndex = userData.findIndex(user => user.id === identifier);
-        userData = userData[userIndex];
-    }
-    const getId = (identifier) => {
-        props.detailHandler(identifier);
-    }
+const Users = ({ userData }) => {
+    const useRows = userData.map(({ id, username, img }) => ({ id, username, img }));
     const userColumns = [
         {
             field: "id", headerName: "Emp ID", width: 150
@@ -35,10 +28,23 @@ const Users = (props) => {
         {
             field: "view", headerName: "View Details", width: 150,
             renderCell: (params) => {
-                return (<button className="viewButton" onClick={() => getId(params.row.id)}>View</button>)
+                return (<button className="viewButton" onClick={() => showUserDetails(params.row.id)}>View</button>)
             },
         }
     ]
+    const dispatch = useDispatch()
+    const showToggle = useSelector(state => state.users.userDetails);
+    const userId = useSelector(state => state.users.userId);
+    let newUserData = [];
+
+    if (showToggle) {
+        const userIndex = userData.findIndex(user => user.id === userId);
+        newUserData = userData[userIndex];
+    }
+
+    const showUserDetails = (identifier) => dispatch(usersActions.showInfo({ id: identifier }));
+    const showUsersList = () => dispatch(usersActions.showList());
+
 
 
     return (
@@ -47,13 +53,10 @@ const Users = (props) => {
                 <Grid className='borderRight' item xs={8} md={10}>
                     <h2 className='userTitle'>Nodal Users Information</h2>
                 </Grid>
-                {/* <Grid className='borderRight' item xs={8} md={10}>
-                    <button className="viewButton">Add New User <span> &nbsb; +</span></button>
-                </Grid> */}
             </Grid>
 
-            {!showDetails && <DataTable rowData={rowsList} columnData={userColumns} pageSize={5} />}
-            {showDetails && <UserInfo goBack={props.showTable} data={userData} />}
+            {!showToggle && <DataTable rowData={useRows} columnData={userColumns} pageSize={5} />}
+            {showToggle && <UserInfo goBack={showUsersList} data={newUserData} />}
         </div>
 
     )

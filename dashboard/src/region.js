@@ -16,7 +16,7 @@ export const regionList = [
     }
 ]
 
-export const initialCircleData = {
+export const initialCircle = {
     tickets: [
         { name: "JAN", total: 1000, open: 200, closed: 450, pending: 350 },
         { name: "FEB", total: 500, open: 300, closed: 50, pending: 150 },
@@ -518,7 +518,7 @@ export const circleData = [
 ];
 
 
-export const initialTrendData = [
+export const initialTrend = [
     { name: "JAN", total: 500, open: 300, closed: 50, pending: 150 },
     { name: "FEB", total: 1000, open: 200, closed: 450, pending: 350 },
     { name: "MAR", total: 1275, open: 475, closed: 500, pending: 300 },
