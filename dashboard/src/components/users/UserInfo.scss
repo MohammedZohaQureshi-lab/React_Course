@@ -94,5 +94,9 @@ button {
         &.back {
             display: block;
         }
+
+        &:hover {
+            box-shadow: 0px 4px 3px 0px #bbbbbb;
+        }
     }
 }
