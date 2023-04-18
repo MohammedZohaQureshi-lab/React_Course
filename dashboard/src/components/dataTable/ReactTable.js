@@ -1,38 +1,14 @@
 import React from 'react'
-import { useTable } from 'react-table'
+import { useTable, useSortBy } from 'react-table'
+import ArrowDownwardOutlinedIcon from '@mui/icons-material/ArrowDownwardOutlined';
+import ArrowUpwardOutlinedIcon from '@mui/icons-material/ArrowUpwardOutlined';
+import './ReactTable.scss'
 
-const ReactTable = ({ tableData }) => {
-  
-  const data = React.useMemo(() => tableData,[tableData]);
-  debugger;
-  let userColumns=[]
-for (const key in tableData) {
-  userColumns.push({
+const ReactTable = ({ useRows, useColumns }) => {
 
-  })
-}
-  
-  const columns = React.useMemo(
-    () => [
-      {
-        Header: 'Employee Id',
-        accessor: 'id', // accessor is the "key" in the data
-      },
-      {
-        Header: 'User Name',
-        accessor: 'username',
-      },
-      {
-        Header: 'Email Id',
-        accessor: 'email',
-      },
-      {
-        Header: 'Action',
-        accessor: 'status',
-      },
-    ],
-    []
-  )
+  const data = React.useMemo(() => useRows, [useRows]);
+
+  const columns = React.useMemo(() => useColumns, [useColumns])
 
   const {
     getTableProps,
@@ -40,25 +16,29 @@ for (const key in tableData) {
     headerGroups,
     rows,
     prepareRow,
-  } = useTable({ columns, data })
+  } = useTable({ columns, data }, useSortBy)
 
   return (
-    <table {...getTableProps()} style={{ border: 'solid 1px blue' }}>
-      <thead>
+    <table {...getTableProps()} className='table'>
+      <thead className='table_header'>
         {headerGroups.map(headerGroup => (
-          <tr {...headerGroup.getHeaderGroupProps()}>
+          <tr className='table_header-row' {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map(column => (
               <th
-                {...column.getHeaderProps()}
-                style={{
-                  borderBottom: 'solid 3px red',
-                  background: 'aliceblue',
-                  color: 'black',
-                  fontWeight: 'bold',
-                }}
+                {...column.getHeaderProps(column.getSortByToggleProps())}
+                // {...column.getHeaderProps()}
+                className='table_header-head'
               >
                 {column.render('Header')}
+                <span>
+                  {column.isSorted
+                    ? column.isSortedDesc
+                      ? <ArrowDownwardOutlinedIcon />
+                      : <ArrowUpwardOutlinedIcon />
+                    : <ArrowDownwardOutlinedIcon />}
+                </span>
               </th>
+
             ))}
           </tr>
         ))}
@@ -67,21 +47,11 @@ for (const key in tableData) {
         {rows.map(row => {
           prepareRow(row)
           return (
-            <tr {...row.getRowProps()}>
-              {row.cells.map(cell => {
-                return (
-                  <td
-                    {...cell.getCellProps()}
-                    style={{
-                      padding: '10px',
-                      border: 'solid 1px gray',
-                      background: 'papayawhip',
-                    }}
-                  >
-                    {cell.render('Cell')}
-                  </td>
-                )
-              })}
+            <tr className='table_row' {...row.getRowProps()}>
+              {row.cells.map(cell => (<td className='table_row-column'
+                {...cell.getCellProps()}>
+                {cell.render('Cell')}
+              </td>))}
             </tr>
           )
         })}

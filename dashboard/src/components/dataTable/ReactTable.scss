@@ -1,0 +1,87 @@
+.table {
+    border-collapse: collapse;
+    color: rgba(0, 0, 0, 0.87);
+    border: 1px solid #eee;
+
+    &_header {
+        &-row {
+            border-bottom: 1px solid #eee;
+        }
+
+        &-head {
+            padding: 10px 20px 10px 10px;
+            border: none;
+            color: rgba(0, 0, 0, 0.87);
+            font-size: 0.8rem;
+
+            &:last-child {
+                padding: 10px 30px 10px 30px;
+            }
+
+            span {
+                font-size: 0.7rem;
+                margin-left: 10px;
+
+                svg {
+                    font-size: inherit;
+                    color: rgba(0, 0, 0, 0.5);
+                    position: relative;
+                    top: 2px;
+
+                    &:hover {
+                        color: rgba(0, 0, 0, 0.9);
+                    }
+                }
+            }
+        }
+    }
+
+    &_row {
+        border-bottom: 1px solid #eee;
+        background-color: white;
+        padding: 10px;
+
+        .userItem {
+            display: flex;
+            justify-content: start;
+            gap: 10px;
+
+            span {
+                align-self: center;
+            }
+
+            &-title {
+                color: rgba(0, 0, 0, 0.87);
+                font-size: 0.75rem;
+            }
+
+            &-avatar {
+                width: 40px;
+                height: 40px;
+
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                }
+            }
+        }
+
+        &-column {
+            border: none;
+            padding: 5px 20px 5px 10px;
+            text-align: left;
+            color: rgba(0, 0, 0, 0.87);
+            font-size: 0.75rem;
+
+            .button.primary {
+                margin: 0 auto;
+                padding: 8px 20px;
+                font-size: 0.7rem;
+            }
+
+
+        }
+    }
+}

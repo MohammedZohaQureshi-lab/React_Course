@@ -5,31 +5,35 @@ import UserInfo from './UserInfo';
 import { Grid } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { usersActions } from '../../store/slice-usersReducer';
+import ReactTable from '../dataTable/ReactTable';
 
 
 const Users = ({ userData }) => {
-    const useRows = userData.map(({ id, username, img }) => ({ id, username, img }));
-    const userColumns = [
+    const useRows = userData.map(({ id, username, img, email }) => ({ id, username, img, email }));
+    const useColumns = [
         {
-            field: "id", headerName: "Emp ID", width: 150
+            Header: 'Employee Id',
+            accessor: 'id',
         },
         {
-            field: "user", headerName: "Employee Name", width: 300,
-            renderCell: (params) => {
-                return (
-                    <div className="cellWithImg">
-                        <img className="cellImg" src={params.row.img} alt="avatar" />
-                        {params.row.username}
-                    </div>
-                );
-            },
+            Header: 'Employee Name',
+            accessor: 'username',
+            Cell: (props) => (
+                <div className='userItem'>
+                    <span className='userItem-avatar'><img  alt={`${props.row.original.username} profile pic`} src={props.row.original.img} /></span>
+                    <span className="userItem-title">{props.row.original.username}</span>
+                </div>
+            )
         },
         {
-            field: "view", headerName: "View Details", width: 150,
-            renderCell: (params) => {
-                return (<button className="viewButton" onClick={() => showUserDetails(params.row.id)}>View</button>)
-            },
-        }
+            Header: 'Email Id',
+            accessor: 'email',
+        },
+        {
+            Header: 'Action',
+            accessor: '',
+            Cell: (props) => <button className="button primary" onClick={() => showUserDetails(props.row.original.id)}>View</button>
+        },
     ]
     const dispatch = useDispatch()
     const showToggle = useSelector(state => state.users.userDetails);
@@ -54,8 +58,9 @@ const Users = ({ userData }) => {
                 </Grid>
             </Grid>
 
-            {!showToggle && <DataTable rowData={useRows} columnData={userColumns} pageSize={5} />}
+            {!showToggle && <ReactTable useRows={useRows} useColumns={useColumns} />}
             {showToggle && <UserInfo goBack={showUsersList} data={newUserData} />}
+
         </div>
 
     )

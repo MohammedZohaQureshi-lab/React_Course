@@ -6,8 +6,37 @@ import ReactTable from '../../components/dataTable/ReactTable'
 import { useSelector } from 'react-redux';
 
 const EditUser = () => {
-    const usersData = useSelector(state => state.users.userData);
-    return <ReactTable tableData={usersData} />
+    const useRows = useSelector(state => state.users.userData);
+    const useColumns = [
+        {
+            Header: 'Employee Id',
+            accessor: 'id',
+        },
+        {
+            Header: 'Employee Name',
+            accessor: 'username',
+            Cell: (props) => (
+                <div className='userItem'>
+                    <span><img className='userItem-avatar' alt={`${props.row.original.username} profile pic`} src={props.row.original.img} /></span>
+                    <span className="userItem-title">{props.row.original.username}</span>
+                </div>
+            )
+        },
+        {
+            Header: 'Email Id',
+            accessor: 'email',
+        },
+        {
+            Header: 'Status',
+            accessor: 'status',
+        },
+        {
+            Header: 'Action',
+            accessor: '',
+            Cell: (props) => <button className='button primary' onClick={() => alert(props.row.original.id)}>View</button>
+        },
+    ]
+    return <ReactTable useRows={useRows} useColumns={useColumns} />
 }
 
 export default EditUser
