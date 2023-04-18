@@ -18,12 +18,11 @@ export const regionList = [
 
 export const initialCircle = {
     tickets: [
-        { name: "JAN", total: 1000, open: 200, closed: 450, pending: 350 },
-        { name: "FEB", total: 500, open: 300, closed: 50, pending: 150 },
-        { name: "MAR", total: 800, open: 200, closed: 300, pending: 300 },
-        { name: "APR", total: 1275, open: 475, closed: 500, pending: 300 },
-        { name: "MAY", total: 240, open: 100, closed: 40, pending: 100 },
-        { name: "JUN", total: 500, open: 150, closed: 100, pending: 150 },
+        { name: "Week 1", total: 1000, open: 200, closed: 450, pending: 350 },
+        { name: "Week 2", total: 500, open: 300, closed: 50, pending: 150 },
+        { name: "Week 3", total: 800, open: 200, closed: 300, pending: 300 },
+        { name: "Week 4", total: 1275, open: 475, closed: 500, pending: 300 },
+        { name: "Week 5", total: 240, open: 100, closed: 40, pending: 100 },
     ], users: [
         {
             id: "11337611",
@@ -133,12 +132,11 @@ export const circleData = [
         id: "mah1",
         circle: "Mumbai",
         tickets: [
-            { name: "JAN", open: 1520, closed: 1108, total: 800, pending: 460 },
-            { name: "FEB", open: 868, closed: 967, total: 1506, pending: 590 },
-            { name: "MAR", open: 1480, closed: 1200, total: 2100, pending: 480 },
-            { name: "APR", open: 1000, closed: 300, total: 1900, pending: 600 },
-            { name: "MAY", open: 300, closed: 200, total: 1000, pending: 500 },
-            { name: "JUN", open: 200, closed: 1000, total: 1500, pending: 300 }
+            { name: "Week 1", open: 1520, closed: 1108, total: 800, pending: 460 },
+            { name: "Week 2", open: 868, closed: 967, total: 1506, pending: 590 },
+            { name: "Week 3", open: 1480, closed: 1200, total: 2100, pending: 480 },
+            { name: "Week 4", open: 1000, closed: 300, total: 1900, pending: 600 },
+            { name: "Week 5", open: 300, closed: 200, total: 1000, pending: 500 }
         ],
         users: [
             {
@@ -187,12 +185,11 @@ export const circleData = [
         id: "mah2",
         circle: "Pune",
         tickets: [
-            { name: "JAN", open: 1480, closed: 1200, total: 1228, pending: 480 },
-            { name: "FEB", open: 1520, closed: 1108, total: 1100, pending: 460 },
-            { name: "MAR", open: 868, closed: 967, total: 1506, pending: 590 },
-            { name: "APR", open: 1400, closed: 680, total: 1700, pending: 380 },
-            { name: "MAY", open: 590, closed: 800, total: 1400, pending: 490 },
-            { name: "JUN", open: 1397, closed: 1098, total: 989, pending: 350 }
+            { name: "Week 1", open: 1480, closed: 1200, total: 1228, pending: 480 },
+            { name: "Week 2", open: 1520, closed: 1108, total: 1100, pending: 460 },
+            { name: "Week 3", open: 868, closed: 967, total: 1506, pending: 590 },
+            { name: "Week 4", open: 1400, closed: 680, total: 1700, pending: 380 },
+            { name: "Week 5", open: 590, closed: 800, total: 1400, pending: 490 }
         ],
         users: [
             {
@@ -261,12 +258,11 @@ export const circleData = [
         id: "mah3",
         circle: "Satara",
         tickets: [
-            { name: "JAN", open: 590, closed: 800, total: 1400, pending: 490 },
-            { name: "FEB", open: 868, closed: 967, total: 1506, pending: 590 },
-            { name: "MAR", open: 1397, closed: 1098, total: 989, pending: 350 },
-            { name: "APR", open: 1480, closed: 1200, total: 1228, pending: 480 },
-            { name: "MAY", open: 1520, closed: 1108, total: 1100, pending: 460 },
-            { name: "JUN", open: 1400, closed: 680, total: 1700, pending: 380 }
+            { name: "Week 1", open: 590, closed: 800, total: 1400, pending: 490 },
+            { name: "Week 2", open: 868, closed: 967, total: 1506, pending: 590 },
+            { name: "Week 3", open: 1397, closed: 1098, total: 989, pending: 350 },
+            { name: "Week 4", open: 1480, closed: 1200, total: 1228, pending: 480 },
+            { name: "Week 5", open: 1520, closed: 1108, total: 1100, pending: 460 }
         ],
         users: [
             {
@@ -315,12 +311,11 @@ export const circleData = [
         id: "guj1",
         circle: "Surat",
         tickets: [
-            { name: "JAN", open: 1480, closed: 1200, total: 1228, pending: 480 },
-            { name: "FEB", open: 1520, closed: 1108, total: 1100, pending: 460 },
-            { name: "MAR", open: 868, closed: 967, total: 1506, pending: 590 },
-            { name: "APR", open: 1400, closed: 680, total: 1700, pending: 380 },
-            { name: "MAY", open: 590, closed: 800, total: 1400, pending: 490 },
-            { name: "JUN", open: 1397, closed: 1098, total: 989, pending: 350 }
+            { name: "Week ", open: 1480, closed: 1200, total: 1228, pending: 480 },
+            { name: "Week 2", open: 1520, closed: 1108, total: 1100, pending: 460 },
+            { name: "Week 3", open: 868, closed: 967, total: 1506, pending: 590 },
+            { name: "Week 4", open: 1400, closed: 680, total: 1700, pending: 380 },
+            { name: "Week 5", open: 590, closed: 800, total: 1400, pending: 490 }
         ],
         users: [
             {
@@ -349,12 +344,11 @@ export const circleData = [
         id: "guj2",
         circle: "Ahmedabad",
         tickets: [
-            { name: "JAN", open: 590, closed: 800, total: 1400, pending: 490 },
-            { name: "FEB", open: 868, closed: 967, total: 1506, pending: 590 },
-            { name: "MAR", open: 1397, closed: 1098, total: 989, pending: 350 },
-            { name: "APR", open: 1480, closed: 1200, total: 1228, pending: 480 },
-            { name: "MAY", open: 1520, closed: 1108, total: 1100, pending: 460 },
-            { name: "JUN", open: 1400, closed: 680, total: 1700, pending: 380 }
+            { name: "Week 1", open: 590, closed: 800, total: 1400, pending: 490 },
+            { name: "Week 2", open: 868, closed: 967, total: 1506, pending: 590 },
+            { name: "Week 3", open: 1397, closed: 1098, total: 989, pending: 350 },
+            { name: "Week 4", open: 1480, closed: 1200, total: 1228, pending: 480 },
+            { name: "Week 5", open: 1520, closed: 1108, total: 1100, pending: 460 }
         ],
         users: [
             {
@@ -383,12 +377,11 @@ export const circleData = [
         id: "guj3",
         circle: "Rajkot",
         tickets: [
-            { name: "JAN", open: 1520, closed: 1108, total: 800, pending: 460 },
-            { name: "FEB", open: 868, closed: 967, total: 1506, pending: 590 },
-            { name: "MAR", open: 1480, closed: 1200, total: 2100, pending: 480 },
-            { name: "APR", open: 1000, closed: 300, total: 1900, pending: 600 },
-            { name: "MAY", open: 300, closed: 200, total: 1000, pending: 500 },
-            { name: "JUN", open: 200, closed: 1000, total: 1500, pending: 300 }
+            { name: "Week 1", open: 1520, closed: 1108, total: 800, pending: 460 },
+            { name: "Week 2", open: 868, closed: 967, total: 1506, pending: 590 },
+            { name: "Week 3", open: 1480, closed: 1200, total: 2100, pending: 480 },
+            { name: "Week 4", open: 1000, closed: 300, total: 1900, pending: 600 },
+            { name: "Week 5", open: 300, closed: 200, total: 1000, pending: 500 }
         ],
         users: [
             {
@@ -417,12 +410,11 @@ export const circleData = [
         id: "kas1",
         circle: "Srinagar ",
         tickets: [
-            { name: "JAN", open: 590, closed: 800, total: 1400, pending: 490 },
-            { name: "FEB", open: 868, closed: 967, total: 1506, pending: 590 },
-            { name: "MAR", open: 1397, closed: 1098, total: 989, pending: 350 },
-            { name: "APR", open: 1480, closed: 1200, total: 1228, pending: 480 },
-            { name: "MAY", open: 1520, closed: 1108, total: 1100, pending: 460 },
-            { name: "JUN", open: 1400, closed: 680, total: 1700, pending: 380 }
+            { name: "Week 1", open: 590, closed: 800, total: 1400, pending: 490 },
+            { name: "Week 2", open: 868, closed: 967, total: 1506, pending: 590 },
+            { name: "Week 3", open: 1397, closed: 1098, total: 989, pending: 350 },
+            { name: "Week 4", open: 1480, closed: 1200, total: 1228, pending: 480 },
+            { name: "Week 5", open: 1520, closed: 1108, total: 1100, pending: 460 }
         ],
         users: [
             {
@@ -451,12 +443,11 @@ export const circleData = [
         id: "kas2",
         circle: "Gulmarg",
         tickets: [
-            { name: "JAN", open: 1520, closed: 1108, total: 800, pending: 460 },
-            { name: "FEB", open: 868, closed: 967, total: 1506, pending: 590 },
-            { name: "MAR", open: 1480, closed: 1200, total: 2100, pending: 480 },
-            { name: "APR", open: 1000, closed: 300, total: 1900, pending: 600 },
-            { name: "MAY", open: 300, closed: 200, total: 1000, pending: 500 },
-            { name: "JUN", open: 200, closed: 1000, total: 1500, pending: 300 }
+            { name: "Week 1", open: 1520, closed: 1108, total: 800, pending: 460 },
+            { name: "Week 2", open: 868, closed: 967, total: 1506, pending: 590 },
+            { name: "Week 3", open: 1480, closed: 1200, total: 2100, pending: 480 },
+            { name: "Week 4", open: 1000, closed: 300, total: 1900, pending: 600 },
+            { name: "Week 5", open: 300, closed: 200, total: 1000, pending: 500 }
         ],
         users: [
             {
@@ -485,12 +476,11 @@ export const circleData = [
         id: "kas3",
         circle: "Pahalgam",
         tickets: [
-            { name: "JAN", open: 1480, closed: 1200, total: 1228, pending: 480 },
-            { name: "FEB", open: 1520, closed: 1108, total: 1100, pending: 460 },
-            { name: "MAR", open: 868, closed: 967, total: 1506, pending: 590 },
-            { name: "APR", open: 1400, closed: 680, total: 1700, pending: 380 },
-            { name: "MAY", open: 590, closed: 800, total: 1400, pending: 490 },
-            { name: "JUN", open: 1397, closed: 1098, total: 989, pending: 350 }
+            { name: "Week 1", open: 1480, closed: 1200, total: 1228, pending: 480 },
+            { name: "Week 3", open: 1520, closed: 1108, total: 1100, pending: 460 },
+            { name: "Week 3", open: 868, closed: 967, total: 1506, pending: 590 },
+            { name: "Week 4", open: 1400, closed: 680, total: 1700, pending: 380 },
+            { name: "Week 5", open: 590, closed: 800, total: 1400, pending: 490 }
         ],
         users: [
             {
