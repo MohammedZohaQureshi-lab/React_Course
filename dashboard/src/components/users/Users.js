@@ -3,7 +3,7 @@ import './Users.scss'
 import DataTable from '../dataTable/DataTable'
 import UserInfo from './UserInfo';
 import { Grid } from '@mui/material';
-//import { usersActions } from '../../store/slice-usersReducer';
+import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
 import { useDispatch, useSelector } from 'react-redux';
 import { usersActions } from '../../store/slice-usersReducer';
 
@@ -50,9 +50,12 @@ const Users = ({ userData }) => {
     return (
         <div className='userContainer'>
             <Grid container>
-                <Grid className='borderRight' item xs={8} md={10}>
+                <Grid item xs={9} md={11}>
                     <h2 className='userTitle'>Nodal Users Information</h2>
                 </Grid>
+                {showToggle && <Grid item xs={3} md={1}>
+                    <button className='primary back withIcon' onClick={showUsersList}><ArrowCircleLeftOutlinedIcon /></button>
+                </Grid>}
             </Grid>
 
             {!showToggle && <DataTable rowData={useRows} columnData={userColumns} pageSize={5} />}
