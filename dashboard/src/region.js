@@ -178,6 +178,86 @@ export const circleData = [
                     { name: "MAY", open: 1520, closed: 1108, total: 1100, pending: 460 },
                     { name: "JUN", open: 1400, closed: 680, total: 1700, pending: 380 }
                 ]
+            },
+            {
+                id: "11339634",
+                username: "Brian",
+                img: "https://t3.ftcdn.net/jpg/02/00/90/24/360_F_200902415_G4eZ9Ok3Ypd4SZZKjc8nqJyFVp1eOD6V.jpg",
+                email: "brian@gmail.com",
+                status: "active",
+                age: 44,
+                phone: "+91-9596478333",
+                address: "Elton St. 234 Garden Yd. Mumbai",
+                state: "Maharashtra",
+                circle: "Mumbai",
+                tickets: [
+                    { name: "JAN", open: 500, closed: 2100, total: 3000, pending: 400 },
+                    { name: "FEB", open: 868, closed: 967, total: 1506, pending: 590 },                   
+                    { name: "MAR", open: 1520, closed: 1108, total: 1100, pending: 460 },
+                    { name: "APR", open: 1400, closed: 680, total: 1700, pending: 380 },
+                    { name: "MAY", open: 1397, closed: 1098, total: 989, pending: 350 },
+                    { name: "JUN", open: 1480, closed: 1200, total: 1228, pending: 480 },
+                ]
+            },
+            {
+                id: "11330465",
+                username: "Neha",
+                img: "https://media.istockphoto.com/id/1386479313/photo/happy-millennial-afro-american-business-woman-posing-isolated-on-white.jpg?b=1&s=170667a&w=0&k=20&c=ahypUC_KTc95VOsBkzLFZiCQ0VJwewfrSV43BOrLETM=",
+                status: "active",
+                email: "neha@gmail.com",
+                age: 35,
+                phone: "+91-9689352617",
+                address: "Cross lane St. 234 Garden Yd. Mumbai",
+                state: "Maharashtra",
+                circle: "Mumbai",
+                tickets: [
+                    { name: "JAN", open: 600, closed: 1100, total: 2000, pending: 300 },
+                    { name: "FEB", open: 1480, closed: 1200, total: 1228, pending: 480 },
+                    { name: "MAR", open: 868, closed: 967, total: 1506, pending: 590 },                   
+                    { name: "APR", open: 1520, closed: 1108, total: 1100, pending: 460 },                    
+                    { name: "MAY", open: 1397, closed: 1098, total: 989, pending: 350 },
+                    { name: "JUN", open: 1400, closed: 680, total: 1700, pending: 380 },
+                ]
+            },
+            {
+                id: "11332029",
+                username: "Jacob",
+                img: "https://img.freepik.com/free-photo/confident-attractive-caucasian-guy-beige-pullon-smiling-broadly-while-standing-against-gray_176420-44508.jpg?w=2000",
+                email: "jacob@gmail.com",
+                status: "passive",
+                age: 44,
+                phone: "+91-9596478333",
+                address: "Elton St. 234 Garden Yd. Mumbai",
+                state: "Maharashtra",
+                circle: "Mumbai",
+                tickets: [
+                    { name: "JAN", open: 110, closed: 700, total: 1000, pending: 190 },
+                    { name: "FEB", open: 868, closed: 967, total: 1300, pending: 590 },                    
+                    { name: "MAR", open: 1480, closed: 1200, total: 2300, pending: 480 },
+                    { name: "APR", open: 1520, closed: 1108, total: 3100, pending: 460 },
+                    { name: "MAY", open: 1397, closed: 1098, total: 989, pending: 350 },
+                    { name: "JUN", open: 1400, closed: 680, total: 2000, pending: 380 }
+                ]
+            },
+            {
+                id: "11337677",
+                username: "Rebecca",
+                img: "https://media.istockphoto.com/id/1368424494/photo/studio-portrait-of-a-cheerful-woman.jpg?b=1&s=170667a&w=0&k=20&c=VEE1756TeCzYH2uPsFZ_P8H3Di2j_jw8aOT6zd7V8JY=",
+                status: "Offline",
+                email: "rebecca@gmail.com",
+                age: 35,
+                phone: "+91-9969543118",
+                address: "James St. 234 Garden Yd. Mumbai",
+                state: "Maharashtra",
+                circle: "Mumbai",
+                tickets: [                    
+                    { name: "JAN", open: 610, closed: 106, total: 1506, pending: 790 },
+                    { name: "FEB", open: 1397, closed: 1098, total: 989, pending: 350 },
+                    { name: "MAR", open: 400, closed: 1200, total: 1750, pending: 150 },
+                    { name: "APR", open: 1520, closed: 1108, total: 1100, pending: 460 },
+                    { name: "MAY", open: 320, closed: 600, total: 1320, pending: 400 },
+                    { name: "JUN", open: 590, closed: 800, total: 1400, pending: 490 }
+                ]
             }
         ]
     },

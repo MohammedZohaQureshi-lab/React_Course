@@ -56,7 +56,7 @@ const AdvanceChart = () => {
     const printElementAtEvent = (element) => {
         if (!element.length) return;
 
-        const { datasetIndex, index } = element[0];
+        //const { datasetIndex, index } = element[0];
     };
 
     const printElementsAtEvent = (elements) => {

@@ -1,6 +1,5 @@
 import React from 'react'
 import './Users.scss'
-import DataTable from '../dataTable/DataTable'
 import UserInfo from './UserInfo';
 import { Grid } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
@@ -20,7 +19,7 @@ const Users = ({ userData }) => {
             accessor: 'username',
             Cell: (props) => (
                 <div className='userItem'>
-                    <span className='userItem-avatar'><img  alt={`${props.row.original.username} profile pic`} src={props.row.original.img} /></span>
+                    <span className='userItem-avatar'><img alt={`${props.row.original.username} profile pic`} src={props.row.original.img} /></span>
                     <span className="userItem-title">{props.row.original.username}</span>
                 </div>
             )
@@ -35,8 +34,7 @@ const Users = ({ userData }) => {
         },
     ]
     const dispatch = useDispatch()
-    const showToggle = useSelector(state => state.users.userDetails);
-    const userId = useSelector(state => state.users.userId);
+    const { userId, userDetails: showToggle, pageSize, pageIndex } = useSelector(state => state.users);
     let newUserData = [];
 
     if (showToggle) {
@@ -57,7 +55,7 @@ const Users = ({ userData }) => {
                 </Grid>
             </Grid>
 
-            {!showToggle && <ReactTable useRows={useRows} useColumns={useColumns} />}
+            {!showToggle && <ReactTable currentPageSize={pageSize} currentPageIndex={pageIndex} useRows={useRows} useColumns={useColumns} />}
             {showToggle && <UserInfo goBack={showUsersList} data={newUserData} />}
 
         </div>
