@@ -7,7 +7,6 @@ const chartReducer = createSlice({
   initialState: { tickets: initialCircleTickets, trending: initialTrend,chartTitle:'Overall Ticket Count Month',trendTitle:'Overall Last Six Months Trends'  },
   reducers: {
     updateCharts(state, actions) {
-      debugger;
       state.tickets = actions.payload.tickets;
       state.trending = actions.payload.trending;
       state.chartTitle = actions.payload.chartTitle;

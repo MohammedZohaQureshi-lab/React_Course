@@ -6,12 +6,11 @@ import './UserInfo.scss'
 
 const UserInfo = (props) => {
     const { data } = props;
-    debugger;
     return (
         <div className="single">
             <div className="singleContainer">
                 <Grid container spacing={2}>
-                    <Grid item xs={12} md={4}>
+                    <Grid item xs={12} md={5}>
                         <div className='userDetails'>
                             <h3 className="title">User Details</h3>
                             <div className="item">
@@ -49,7 +48,7 @@ const UserInfo = (props) => {
                             <button className='primary back withIcon' onClick={props.goBack}><span><ArrowCircleLeftOutlinedIcon /></span><span>Show All Users</span></button>
                         </div>
                     </Grid>
-                    <Grid item xs={12} md={8}>
+                    <Grid item xs={12} md={7}>
                         <DrawLineChart chartData={data.tickets} title="User Tickets Info ( Last 6 Months)" />
                     </Grid>
                 </Grid>

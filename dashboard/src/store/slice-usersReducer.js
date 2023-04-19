@@ -17,7 +17,7 @@ const usersReducer = createSlice({
             state.userDetails = false;
         },
         updatePageDetails(state, action) {
-            state.pageSize = action.payload.currentPageSize;
+            state.pageSize = action.payload.currentPageSize === undefined ? state.pageSize : action.payload.currentPageSize;
             state.pageIndex = action.payload.currentPageIndex;
         }
     }

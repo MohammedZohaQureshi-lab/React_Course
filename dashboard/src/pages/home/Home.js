@@ -29,6 +29,7 @@ const Home = () => {
             chartTitle: `Overall Ticket Count Current Month in ${circleName} Region`
         }));
         dispatch(usersActions.updateUsers({ updateInfo: false, userList: userData }));
+        dispatch(usersActions.updatePageDetails({ currentPageIndex: 0 }))
         setViewChartDetails(false);
     }
 
