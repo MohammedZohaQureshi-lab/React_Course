@@ -1,0 +1,14 @@
+.pin {
+    
+    color: red;
+    .pin-text {
+        font-size: 1rem;
+        font-weight: bold;
+        color: red;
+
+        .pin-toggle {
+            font-size: 1rem;
+            color: red;
+        }
+    }
+}
