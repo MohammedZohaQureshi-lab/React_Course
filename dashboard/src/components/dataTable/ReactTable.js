@@ -87,7 +87,8 @@ const ReactTable = ({ useRows, useColumns, currentPageSize, currentPageIndex }) 
             <select id='selectPage'
               value={pageSize}
               onChange={e => {
-                setPageSize(Number(e.target.value))
+                setPageSize(Number(e.target.value));
+                dispatch(usersActions.updatePageDetails({ currentPageIndex: 0, currentPageSize: Number(e.target.value) }))
               }}
             >
               {[2, 4, 6, 10].map(pageSize => (
