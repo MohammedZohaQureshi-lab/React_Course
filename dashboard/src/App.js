@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import AdvanceChart from './pages/charts/AdvanceChart';
 import EditUser from './pages/edit/EditUser';
+import ProductsPage from './pages/product/ProductsPage'
 
 function App() {
   const router = createBrowserRouter([
@@ -16,6 +17,10 @@ function App() {
     },
     {
       path: '/editUser', element: <EditUser />
+
+    },
+    {
+      path: '/products', element: <ProductsPage />
 
     }])
   return (
