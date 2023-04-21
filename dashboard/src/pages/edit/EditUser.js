@@ -2,7 +2,7 @@ import React from 'react';
 // import { Grid } from '@mui/material'
 // import SideNav from '../../components/nav/SideNav'
 // import Nav from '../../components/nav/Nav'
-import ReactTable from '../../components/dataTable/ReactTable'
+import ReactTable from '../../components/table/ReactTable'
 import { useSelector } from 'react-redux';
 
 const EditUser = () => {

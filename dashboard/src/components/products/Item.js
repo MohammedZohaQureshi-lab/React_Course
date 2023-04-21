@@ -2,9 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useTable, useFilters, useGlobalFilter, useAsyncDebounce } from 'react-table'
 // A great library for fuzzy filtering/sorting items
-import matchSorter from 'match-sorter'
-
-import makeData from './makeData'
+import { matchSorter } from 'match-sorter'
 
 const Styles = styled.div`
   padding: 1rem;
@@ -36,11 +34,7 @@ const Styles = styled.div`
 `
 
 // Define a default UI for filtering
-function GlobalFilter({
-  preGlobalFilteredRows,
-  globalFilter,
-  setGlobalFilter,
-}) {
+function GlobalFilter({ preGlobalFilteredRows, globalFilter, setGlobalFilter, }) {
   const count = preGlobalFilteredRows.length
   const [value, setValue] = React.useState(globalFilter)
   const onChange = useAsyncDebounce(value => {
@@ -50,62 +44,40 @@ function GlobalFilter({
   return (
     <span>
       Search:{' '}
-      <input
-        value={value || ""}
+      <input value={value || ""} placeholder={`${count} records...`} style={{ fontSize: '1.1rem', border: '0', }}
         onChange={e => {
           setValue(e.target.value);
           onChange(e.target.value);
-        }}
-        placeholder={`${count} records...`}
-        style={{
-          fontSize: '1.1rem',
-          border: '0',
-        }}
-      />
+        }} />
     </span>
   )
 }
 
 // Define a default UI for filtering
-function DefaultColumnFilter({
-  column: { filterValue, preFilteredRows, setFilter },
-}) {
+function DefaultColumnFilter({ column: { filterValue, preFilteredRows, setFilter } }) {
   const count = preFilteredRows.length
-
   return (
-    <input
-      value={filterValue || ''}
+    <input value={filterValue || ''} placeholder={`Search ${count} records...`}
       onChange={e => {
         setFilter(e.target.value || undefined) // Set undefined to remove the filter entirely
-      }}
-      placeholder={`Search ${count} records...`}
-    />
+      }} />
   )
 }
 
 // This is a custom filter UI for selecting
 // a unique option from a list
-function SelectColumnFilter({
-  column: { filterValue, setFilter, preFilteredRows, id },
-}) {
+function SelectColumnFilter({ column: { filterValue, setFilter, preFilteredRows, id } }) {
   // Calculate the options for filtering
   // using the preFilteredRows
   const options = React.useMemo(() => {
     const options = new Set()
-    preFilteredRows.forEach(row => {
-      options.add(row.values[id])
-    })
+    preFilteredRows.forEach(row => { options.add(row.values[id]) })
     return [...options.values()]
-  }, [id, preFilteredRows])
+  }, [id, preFilteredRows]);
 
   // Render a multi-select box
   return (
-    <select
-      value={filterValue}
-      onChange={e => {
-        setFilter(e.target.value || undefined)
-      }}
-    >
+    <select value={filterValue} onChange={e => { setFilter(e.target.value || undefined) }}    >
       <option value="">All</option>
       {options.map((option, i) => (
         <option key={i} value={option}>
@@ -119,9 +91,7 @@ function SelectColumnFilter({
 // This is a custom filter UI that uses a
 // slider to set the filter value between a column's
 // min and max values
-function SliderColumnFilter({
-  column: { filterValue, setFilter, preFilteredRows, id },
-}) {
+function SliderColumnFilter({ column: { filterValue, setFilter, preFilteredRows, id } }) {
   // Calculate the min and max
   // using the preFilteredRows
 
@@ -137,15 +107,7 @@ function SliderColumnFilter({
 
   return (
     <>
-      <input
-        type="range"
-        min={min}
-        max={max}
-        value={filterValue || min}
-        onChange={e => {
-          setFilter(parseInt(e.target.value, 10))
-        }}
-      />
+      <input type="range" min={min} max={max} value={filterValue || min} onChange={(e) => setFilter(parseInt(e.target.value, 10))} />
       <button onClick={() => setFilter(undefined)}>Off</button>
     </>
   )
@@ -154,9 +116,7 @@ function SliderColumnFilter({
 // This is a custom UI for our 'between' or number range
 // filter. It uses two number boxes and filters rows to
 // ones that have values between the two
-function NumberRangeColumnFilter({
-  column: { filterValue = [], preFilteredRows, setFilter, id },
-}) {
+function NumberRangeColumnFilter({ column: { filterValue = [], preFilteredRows, setFilter, id } }) {
   const [min, max] = React.useMemo(() => {
     let min = preFilteredRows.length ? preFilteredRows[0].values[id] : 0
     let max = preFilteredRows.length ? preFilteredRows[0].values[id] : 0
@@ -168,38 +128,19 @@ function NumberRangeColumnFilter({
   }, [id, preFilteredRows])
 
   return (
-    <div
-      style={{
-        display: 'flex',
-      }}
-    >
-      <input
-        value={filterValue[0] || ''}
-        type="number"
+    <div style={{ display: 'flex' }}    >
+      <input value={filterValue[0] || ''} type="number" placeholder={`Min (${min})`} style={{ width: '70px', marginRight: '0.5rem' }}
         onChange={e => {
           const val = e.target.value
           setFilter((old = []) => [val ? parseInt(val, 10) : undefined, old[1]])
         }}
-        placeholder={`Min (${min})`}
-        style={{
-          width: '70px',
-          marginRight: '0.5rem',
-        }}
       />
       to
-      <input
-        value={filterValue[1] || ''}
-        type="number"
+      <input value={filterValue[1] || ''} type="number" placeholder={`Max (${max})`} style={{ width: '70px', marginLeft: '0.5rem' }}
         onChange={e => {
           const val = e.target.value
           setFilter((old = []) => [old[0], val ? parseInt(val, 10) : undefined])
-        }}
-        placeholder={`Max (${max})`}
-        style={{
-          width: '70px',
-          marginLeft: '0.5rem',
-        }}
-      />
+        }} />
     </div>
   )
 }
@@ -241,26 +182,9 @@ function Table({ columns, data }) {
     []
   )
 
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow,
-    state,
-    visibleColumns,
-    preGlobalFilteredRows,
-    setGlobalFilter,
-  } = useTable(
-    {
-      columns,
-      data,
-      defaultColumn, // Be sure to pass the defaultColumn option
-      filterTypes,
-    },
-    useFilters, // useFilters!
-    useGlobalFilter // useGlobalFilter!
-  )
+  const { getTableProps, getTableBodyProps, headerGroups, rows,
+    prepareRow, state, visibleColumns, preGlobalFilteredRows, setGlobalFilter, } = useTable(
+      { columns, data, defaultColumn, filterTypes, }, useFilters, useGlobalFilter)
 
   // We don't want to render all of the rows for this example, so cap
   // it for this use case
@@ -288,11 +212,7 @@ function Table({ columns, data }) {
                 textAlign: 'left',
               }}
             >
-              <GlobalFilter
-                preGlobalFilteredRows={preGlobalFilteredRows}
-                globalFilter={state.globalFilter}
-                setGlobalFilter={setGlobalFilter}
-              />
+             
             </th>
           </tr>
         </thead>
@@ -310,12 +230,12 @@ function Table({ columns, data }) {
         </tbody>
       </table>
       <br />
-      <div>Showing the first 20 results of {rows.length} rows</div>
-      <div>
+      <div>Filter Results {rows.length}</div>
+      {/* <div>
         <pre>
           <code>{JSON.stringify(state.filters, null, 2)}</code>
         </pre>
-      </div>
+      </div> */}
     </>
   )
 }
@@ -334,58 +254,59 @@ function filterGreaterThan(rows, id, filterValue) {
 // check, but here, we want to remove the filter if it's not a number
 filterGreaterThan.autoRemove = val => typeof val !== 'number'
 
-function App() {
+function Items({ useColumns, useRows }) {
+
   const columns = React.useMemo(
-    () => [
-      {
-        Header: 'Name',
-        columns: [
-          {
-            Header: 'First Name',
-            accessor: 'firstName',
-          },
-          {
-            Header: 'Last Name',
-            accessor: 'lastName',
-            // Use our custom `fuzzyText` filter on this column
-            filter: 'fuzzyText',
-          },
-        ],
-      },
-      {
-        Header: 'Info',
-        columns: [
-          {
-            Header: 'Age',
-            accessor: 'age',
-            Filter: SliderColumnFilter,
-            filter: 'equals',
-          },
-          {
-            Header: 'Visits',
-            accessor: 'visits',
-            Filter: NumberRangeColumnFilter,
-            filter: 'between',
-          },
-          {
-            Header: 'Status',
-            accessor: 'status',
-            Filter: SelectColumnFilter,
-            filter: 'includes',
-          },
-          {
-            Header: 'Profile Progress',
-            accessor: 'progress',
-            Filter: SliderColumnFilter,
-            filter: filterGreaterThan,
-          },
-        ],
-      },
-    ],
-    []
+    () => useColumns,
+    [useColumns]
   )
 
-  const data = React.useMemo(() => makeData(100000), [])
+  const samplefilter = [{
+    Header: 'Name',
+    columns: [
+      {
+        Header: 'First Name',
+        accessor: 'firstName',
+      },
+      {
+        Header: 'Last Name',
+        accessor: 'lastName',
+        // Use our custom `fuzzyText` filter on this column
+        filter: 'fuzzyText',
+      },
+    ],
+  },
+  {
+    Header: 'Info',
+    columns: [
+      {
+        Header: 'Age',
+        accessor: 'age',
+        Filter: SliderColumnFilter,
+        filter: 'equals',
+      },
+      {
+        Header: 'Visits',
+        accessor: 'visits',
+        Filter: NumberRangeColumnFilter,
+        filter: 'between',
+      },
+      {
+        Header: 'Status',
+        accessor: 'status',
+        Filter: SelectColumnFilter,
+        filter: 'includes',
+      },
+      {
+        Header: 'Profile Progress',
+        accessor: 'progress',
+        Filter: SliderColumnFilter,
+        filter: filterGreaterThan,
+      },
+    ],
+  },
+  ]
+  const data = React.useMemo(() => useRows, [useRows])
 
   return (
     <Styles>
@@ -394,4 +315,4 @@ function App() {
   )
 }
 
-export default App
+export default Items

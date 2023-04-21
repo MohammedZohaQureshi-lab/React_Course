@@ -3,7 +3,7 @@ import './Map.scss'
 import GoogleMapReact from 'google-map-react';
 import LocationPin from "./LocationPin";
 import data from './map.json'
-console.log(data)
+
 const Map = ({ location, zoomLevel }) => {
     return (
         // Important! Always set the container height explicitly

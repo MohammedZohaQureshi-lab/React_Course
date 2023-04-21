@@ -1,5 +1,5 @@
 import React from 'react'
-import { useTable, useSortBy, usePagination } from 'react-table'
+import { useTable, useSortBy, usePagination, useFilters, useGlobalFilter } from 'react-table'
 import ArrowDownwardOutlinedIcon from '@mui/icons-material/ArrowDownwardOutlined';
 import ArrowUpwardOutlinedIcon from '@mui/icons-material/ArrowUpwardOutlined';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
@@ -15,21 +15,10 @@ const ReactTable = ({ useRows, useColumns, currentPageSize, currentPageIndex }) 
   const dispatch = useDispatch();
 
   const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    page,
-    prepareRow,
-    canPreviousPage,
-    canNextPage,
-    pageOptions,
-    pageCount,
-    gotoPage,
-    nextPage,
-    previousPage,
-    setPageSize,
-    state: { pageIndex, pageSize },
-  } = useTable({ columns, data, initialState: { pageIndex: currentPageIndex, pageSize: currentPageSize }, }, useSortBy, usePagination)
+    getTableProps, getTableBodyProps, headerGroups, page,
+    prepareRow, canPreviousPage, canNextPage, pageOptions, nextPage,
+    previousPage, setPageSize, state: { pageIndex, pageSize },
+  } = useTable({ columns, data, initialState: { pageIndex: currentPageIndex, pageSize: currentPageSize }, }, useFilters, useGlobalFilter, useSortBy, usePagination,)
 
   return (
     <div className='tablecontainer'>
@@ -44,6 +33,7 @@ const ReactTable = ({ useRows, useColumns, currentPageSize, currentPageIndex }) 
                   className='table_header-head'
                 >
                   {column.render('Header')}
+                  {/* <div>{column.canFilter ? column.render('Filter') : null}</div> */}
                   <span className='sortIcon'>
                     {column.isSorted
                       ? column.isSortedDesc
@@ -51,6 +41,7 @@ const ReactTable = ({ useRows, useColumns, currentPageSize, currentPageIndex }) 
                         : <ArrowUpwardOutlinedIcon />
                       : <ArrowDownwardOutlinedIcon />}
                   </span>
+                  
                 </th>
 
               ))}
