@@ -1,0 +1,171 @@
+[
+  {
+    "CIRCLE": "AP",
+    "CIRCLE_NAME": "ANDHRA PRADESH",
+    "IPDR_FORMAT": "F15",
+    "INPUT_PARAMETER": "CEL ID"
+  },
+  {
+    "CIRCLE": "AP",
+    "CIRCLE_NAME": "ANDHRA PRADESH",
+    "IPDR_FORMAT": "F15",
+    "INPUT_PARAMETER": "DEST IPV4"
+  },
+  {
+    "CIRCLE": "AP",
+    "CIRCLE_NAME": "ANDHRA PRADESH",
+    "IPDR_FORMAT": "F15",
+    "INPUT_PARAMETER": "DEST PORT"
+  },
+  {
+    "CIRCLE": "AP",
+    "CIRCLE_NAME": "ANDHRA PRADESH",
+    "IPDR_FORMAT": "F15",
+    "INPUT_PARAMETER": "IMEI"
+  },
+  {
+    "CIRCLE": "AP",
+    "CIRCLE_NAME": "ANDHRA PRADESH",
+    "IPDR_FORMAT": "F15",
+    "INPUT_PARAMETER": "IPV6"
+  },
+  {
+    "CIRCLE": "AP",
+    "CIRCLE_NAME": "ANDHRA PRADESH",
+    "IPDR_FORMAT": "F15",
+    "INPUT_PARAMETER": "MAC ID"
+  },
+  {
+    "CIRCLE": "AP",
+    "CIRCLE_NAME": "ANDHRA PRADESH",
+    "IPDR_FORMAT": "F15",
+    "INPUT_PARAMETER": "MSISDN"
+  },
+  {
+    "CIRCLE": "AP",
+    "CIRCLE_NAME": "ANDHRA PRADESH",
+    "IPDR_FORMAT": "F22",
+    "INPUT_PARAMETER": "CEL ID"
+  },
+  {
+    "CIRCLE": "AP",
+    "CIRCLE_NAME": "ANDHRA PRADESH",
+    "IPDR_FORMAT": "F22",
+    "INPUT_PARAMETER": "DEST IPV4"
+  },
+  {
+    "CIRCLE": "AP",
+    "CIRCLE_NAME": "ANDHRA PRADESH",
+    "IPDR_FORMAT": "F22",
+    "INPUT_PARAMETER": "DEST PORT"
+  },
+  {
+    "CIRCLE": "AP",
+    "CIRCLE_NAME": "ANDHRA PRADESH",
+    "IPDR_FORMAT": "F22",
+    "INPUT_PARAMETER": "IMEI"
+  },
+  {
+    "CIRCLE": "AP",
+    "CIRCLE_NAME": "ANDHRA PRADESH",
+    "IPDR_FORMAT": "F22",
+    "INPUT_PARAMETER": "IPV6"
+  },
+  {
+    "CIRCLE": "AP",
+    "CIRCLE_NAME": "ANDHRA PRADESH",
+    "IPDR_FORMAT": "F22",
+    "INPUT_PARAMETER": "MAC ID"
+  },
+  {
+    "CIRCLE": "AP",
+    "CIRCLE_NAME": "ANDHRA PRADESH",
+    "IPDR_FORMAT": "F22",
+    "INPUT_PARAMETER": "MSISDN"
+  },
+  {
+    "CIRCLE": "AS",
+    "CIRCLE_NAME": "ASSAM",
+    "IPDR_FORMAT": "F22",
+    "INPUT_PARAMETER": "CEL ID"
+  },
+  {
+    "CIRCLE": "AS",
+    "CIRCLE_NAME": "ASSAM",
+    "IPDR_FORMAT": "F22",
+    "INPUT_PARAMETER": "DEST IPV4"
+  },
+  {
+    "CIRCLE": "AS",
+    "CIRCLE_NAME": "ASSAM",
+    "IPDR_FORMAT": "F22",
+    "INPUT_PARAMETER": "DEST PORT"
+  },
+  {
+    "CIRCLE": "AS",
+    "CIRCLE_NAME": "ASSAM",
+    "IPDR_FORMAT": "F22",
+    "INPUT_PARAMETER": "IMEI"
+  },
+  {
+    "CIRCLE": "AS",
+    "CIRCLE_NAME": "ASSAM",
+    "IPDR_FORMAT": "F22",
+    "INPUT_PARAMETER": "IPV6"
+  },
+  {
+    "CIRCLE": "AS",
+    "CIRCLE_NAME": "ASSAM",
+    "IPDR_FORMAT": "F22",
+    "INPUT_PARAMETER": "MAC ID"
+  },
+  {
+    "CIRCLE": "AS",
+    "CIRCLE_NAME": "ASSAM",
+    "IPDR_FORMAT": "F22",
+    "INPUT_PARAMETER": "MSISDN"
+  },
+
+  {
+    "CIRCLE": "AS",
+    "CIRCLE_NAME": "ASSAM",
+    "IPDR_FORMAT": "F15",
+    "INPUT_PARAMETER": "CEL ID"
+  },
+  {
+    "CIRCLE": "AS",
+    "CIRCLE_NAME": "ASSAM",
+    "IPDR_FORMAT": "F15",
+    "INPUT_PARAMETER": "DEST IPV4"
+  },
+  {
+    "CIRCLE": "AS",
+    "CIRCLE_NAME": "ASSAM",
+    "IPDR_FORMAT": "F15",
+    "INPUT_PARAMETER": "DEST PORT"
+  },
+  {
+    "CIRCLE": "AS",
+    "CIRCLE_NAME": "ASSAM",
+    "IPDR_FORMAT": "F15",
+    "INPUT_PARAMETER": "IMEI"
+  },
+  {
+    "CIRCLE": "AS",
+    "CIRCLE_NAME": "ASSAM",
+    "IPDR_FORMAT": "F15",
+    "INPUT_PARAMETER": "IPV6"
+  },
+  {
+    "CIRCLE": "AS",
+    "CIRCLE_NAME": "ASSAM",
+    "IPDR_FORMAT": "F15",
+    "INPUT_PARAMETER": "MAC ID"
+  },
+  {
+    "CIRCLE": "AS",
+    "CIRCLE_NAME": "ASSAM",
+    "IPDR_FORMAT": "F15",
+    "INPUT_PARAMETER": "MSISDN"
+  }
+]

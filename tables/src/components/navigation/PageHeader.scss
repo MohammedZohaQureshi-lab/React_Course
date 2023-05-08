@@ -1,0 +1,55 @@
+.header {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 0;
+    background-color: #007bff;
+    box-shadow: 0 8px 6px -7px #c9c9c9;
+    height: 36px;
+
+    .sideNav-slide-button {
+
+        width: 36px;
+        height: 36px;
+        border-radius: 0;
+        color: #fefefe;
+        background-color: rgba(0, 0, 0, 0.4);
+        border: 0;
+        transition: all 1s ease-out;
+        margin-right: 1rem !important;
+
+        &.showSideNav {
+            left: -8px;
+        }
+
+        .col-md-12 {
+            transition: all 2s ease-in;
+        }
+
+        &.rotate {
+            svg {
+                transform: rotateY(180deg);
+                transition: all 500ms ease-in;
+            }
+        }
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        svg {
+            display: block;
+            width: 100%;
+            transition: all 500ms ease-out;
+        }
+    }
+}
+
+.navigation {
+    &-title {
+        font-size: 1rem;
+        margin: 0;
+        color: #fff;
+        font-weight: 700;
+        line-height: 1;
+    }
+}

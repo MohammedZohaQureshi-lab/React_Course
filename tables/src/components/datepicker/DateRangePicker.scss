@@ -1,0 +1,63 @@
+.datepicker-container {
+    display: flex;
+    gap: 10px;
+
+    .rs-picker-toggle.rs-btn.rs-btn-default {
+
+        &:focus-visible,
+        &:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+    }
+
+    .rs-picker-toggle.rs-btn.rs-btn-default {
+        border: none;
+        box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.5);
+    }
+
+
+    .rs-picker-has-value .rs-btn .rs-picker-toggle-value,
+    .rs-picker-has-value .rs-picker-toggle .rs-picker-toggle-value {
+        color: black;
+    }
+
+    .rs-picker-toggle .rs-picker-toggle-placeholder {
+        font-size: 0.8rem;
+    }
+
+    .rs-picker-default .rs-picker-toggle.rs-btn-sm {
+        padding-top: 2px;
+    }
+
+    .datepicker-label {
+        display: block;
+        font-size: 0.8rem;
+        color: gray;
+        padding: 0 0 3px;
+        color: #707070;
+        line-height: 2;
+    }
+}
+
+.rs-anim-fade.rs-anim-in {
+    margin-left: -8.5rem;
+}
+
+button.rs-btn.rs-btn-link.rs-btn-sm {
+    display: none;
+}
+
+.rs-picker-toolbar.rs-stack {
+    padding: 10px 12px;
+}
+
+button.rs-btn.rs-btn-primary.rs-btn-sm {
+    font-size: 0.7rem;
+    line-height: 20px;
+    padding: 2px 10px;
+}
+
+span.rs-picker-toggle-clean.rs-btn-close {
+    cursor: pointer;
+}

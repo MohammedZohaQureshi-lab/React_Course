@@ -1,0 +1,79 @@
+{
+  "13-18h": {
+    "IPV4": 48
+  },
+
+  "19-24h": {
+    "DEST IPV4": 221,
+    "IPV4": 701,
+    "MSISDN": 52,
+    "CELL ID": 576
+  },
+
+  "25-36h": {
+    "IMEI": 7,
+    "CELL ID": 1177,
+    "DEST PORT": 17,
+    "IPV6": 2,
+    "IPV4": 2823,
+    "MSISDN": 408,
+    "DEST IPV4": 6671
+  },
+
+  "37-48h": {
+    "IPV4": 68,
+    "IMEI": 2,
+    "MSISDN": 32,
+    "DEST IPV4": 86,
+    "DEST PORT": 4
+  },
+
+  "49-72h": {
+    "CELL ID": 10,
+    "IPV4": 982,
+    "MSISDN": 500,
+    "DEST IPV4": 574
+  },
+
+  "7-12h": {
+    "IPV4": 117,
+    "DEST IPV4": 464,
+    "MSISDN": 49,
+    "CELL ID": 2,
+    "IMEI": 6,
+    "IPV6": 2
+  },
+
+  ">72h": {
+    "IPV6": 54,
+    "DEST PORT": 78,
+    "IPV4": 26,
+    "MSISDN": 2067,
+    "DEST IPV4": 651,
+    "CELL ID": 335,
+    "MACID": 10,
+    "IMEI": 31
+  },
+
+  "lt 6h": {
+    "IPV4": 916,
+    "MSISDN": 263,
+    "DEST PORT": 31,
+    "IMEI": 8,
+    "DEST IPV4": 199,
+    "MACID": 1,
+    "CELL ID": 22,
+    "IPV6": 36
+  },
+
+  "Grand Total": {
+    "IPV4": 5681,
+    "DEST IPV4": 8866,
+    "MSISDN": 3371,
+    "CELL ID": 2122,
+    "IMEI": 54,
+    "DEST PORT": 130,
+    "IPV6": 94,
+    "MACID": 11
+  }
+}

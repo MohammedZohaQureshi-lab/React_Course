@@ -1,0 +1,160 @@
+.sideNav {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    padding: 0;
+    box-shadow: 4px 30px 4px -1px #eee;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    position: relative;
+
+
+    &-header {
+        padding: 1rem 0.5rem 0.5rem 1rem;
+
+        &--title {
+            font-size: 1rem;
+            margin: 0;
+            font-weight: 700;
+            line-height: 1;
+        }
+    }
+
+    &-content {
+        padding: 0.7rem 0.2rem;
+
+        .accordion {
+            .accordion {
+                &-item {
+                    border: 0;
+                }
+
+                &-header {
+                    line-height: 2.5;
+                    font-size: 0.85rem;
+                    font-weight: 500;
+
+                    &--title {
+                        svg {
+                            font-size: 0.9rem;
+                            margin-right: 8px;
+                            position: relative;
+                            bottom: 1px;
+                            ;
+                        }
+                    }
+                }
+
+                &-button {
+                    padding: 0.1rem 0.3rem;
+                    text-align: left;
+                    font-size: 0.85rem;
+                    display: block;
+                    width: 100%;
+                    color: #004ea1;
+
+                    .icon-down,
+                    .icon-up {
+                        display: block;
+                        position: absolute;
+                        right: 8px;
+                        top: 8px;
+                        width: 20px;
+                        height: 20px;
+
+                        svg {
+                            color: #004ea1;
+                            display: block;
+                            width: 100%;
+                        }
+                    }
+
+                    &.collapsed {
+                        .icon-down {
+                            transform: rotate(0deg);
+                            transition: all 0.3s ease-out;
+                        }
+
+                        .icon-up {
+                            visibility: hidden;
+                            transform: rotate(-180deg);
+                        }
+                    }
+
+                    &:not(.collapsed) {
+                        background-color: rgba(0, 64, 132, 0.16);
+
+                        .icon-down {
+                            visibility: hidden;
+                            transform: rotate(180deg);
+                        }
+
+                        .icon-up {
+                            transform: rotate(0deg);
+                            transition: all 0.3s ease-out;
+                            visibility: visible;
+                        }
+                    }
+
+                    &::after {
+                        display: none;
+                    }
+
+
+
+                    &:focus,
+                    &:focus-visible {
+                        border: none;
+                        outline: none;
+                        box-shadow: none;
+                    }
+                }
+
+                &-body {
+                    box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color);
+                    padding: 0.2rem 0 0.5rem;
+                }
+            }
+        }
+
+        &-list {
+            margin: 0;
+            padding: 0;
+
+            li {
+                padding-left: 01.85rem;
+                padding-top: 0.3rem;
+                padding-bottom: 0.3rem;
+                font-size: 0.85rem;
+                display: block;
+
+                &:hover {
+                    background-color: rgba(0, 89, 176, 0.43);
+
+                    span {
+                        cursor: pointer;
+                        color: white;
+                    }
+                }
+            }
+
+            span {
+                color: #004ea1;
+                cursor: pointer;
+                display: block;
+            }
+
+            &--title {
+                margin-bottom: 0.5rem;
+                font-size: 1rem;
+                font-weight: 700;
+                display: inline !important;
+
+                &:hover {
+                    color: #a4a4a4;
+                }
+            }
+        }
+    }
+}
